@@ -4,6 +4,7 @@ Documentation
 About Trail Finder v0.1
 -----------------------
 Trail Finder is an application that uses geolocation (a users current GPS location) and gives them feedback, telling them the closest trail heads* to them at that location. This project was derived out of a personal need to locate various towpath trails in the NE Ohio area.
+
 *Trail heads can be found most often at parks and towpaths and are typically for walking or riding a bicycle. 
 
 Version Information (v0.1)
@@ -29,7 +30,9 @@ Trail Finder uses many open source libraries to do cool stuff...
 
 Code Information
 ----------------
-The index.html file contains all of the code being used (or links to it). For testing, use these coordinates (41.0731, 81.5178) -- which is Akron, Ohio. Currently, Trail Finder uses very basic technologies. It is written in Javascript/jQuery, HTML5, and CSS3. It queries data from Google Fusion Tables to populate the map and list of locations. 
+The index.html file contains all of the code being used (or links to it). For testing, use these coordinates (41.0731, 81.5178) -- which is Akron, Ohio. 
+
+Currently, Trail Finder uses very basic technologies. It is written in Javascript/jQuery, HTML5, and CSS3. It queries data from Google Fusion Tables to populate the map and list of locations. 
 There is a Legacy folder that contains old code that either didn't work or was deprecated. The main folder structure contains the root (i.e. index.html) and three folders: CSS, JS, & img. 
 
 Google Fusion Table setup
@@ -44,11 +47,10 @@ Anyone who wants to contribute ideas, code, or help, just shoot me a message or 
 
 Contact
 -------
-James D. Mosier
-james@jamesdmosier.com
-www.jamesdmosier.com
+James D. Mosier - james@jamesdmosier.com - www.jamesdmosier.com
 
 Copyright & Licensing
 ---------------------
 Original work Copyright (c) 2013 James D. Mosier 
+
 Please read the LICENSE.txt for all copyright and licensing information. 
