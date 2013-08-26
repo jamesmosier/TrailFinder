@@ -9,14 +9,14 @@ Trail heads can be found most often at parks and towpaths and are typically for 
 Libraries Used
 --------------
 Trail Finder uses many open source libraries to do cool stuff...
-1. jQuery 
-2. Google Maps API
-3. Google Fusion Tables API
-4. Bootstrap 3.0
+  1. jQuery 
+  2. Google Maps API
+  3. Google Fusion Tables API
+  4. Bootstrap 3.0
 
 Code Information
 ----------------
-Currently, Trail Finder uses very basic technologies. It is written in Javascript/jQuery, HTML5, and CSS3. It queries data from Google Fusion Tables to populate the map and list of locations. 
+The index.html file contains all of the code being used (or links to it). Currently, Trail Finder uses very basic technologies. It is written in Javascript/jQuery, HTML5, and CSS3. It queries data from Google Fusion Tables to populate the map and list of locations. 
 There is a Legacy folder that contains old code that either didn't work or was deprecated. The main folder structure contains the root (i.e. index.html) and three folders: CSS, JS, & img. 
 
 Google Fusion Table setup
