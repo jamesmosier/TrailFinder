@@ -12,6 +12,7 @@ What it can do so far:
   1. Find a users location using GPS, return and pinpoint the 3 closest locations to them
   2. Write out a list of 3 locations (not sorted yet)
   3. Give them an info window with location info
+  
 What it needs to do: 
   1. Return the correct 3 closest locations to the table (already works on the map)
   2. Add more data (currently there is only 5 pieces of sample data in Fusion Tables), 
