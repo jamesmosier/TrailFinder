@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <!-- link to question stackoverflow.com/questions/17461503/google-fusion-tables-finding-nearest-places-from-the-list-in-fusion-table-fro -->
+    <meta content="initial-scale=1.0, user-scalable=no" name="viewport"/>
+    <meta charset="utf-8">
+    <title>Fusion Tables Layer Example</title>
+    <meta content="marcusasplund.com" name="author">
+    <link data-require="bootstrap-css@2.3.2" data-semver="2.3.2" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet"/>
+    <style>
+      body,
+      html {
+        border: 0px;
+        height: 100%;
+        margin: 0px;
+        width: 100%;
+      }
+      #map-canvas {
+        height: 600px;
+        width: 100%;
+      }
+      /* custom css for dealing with bootstrap - google maps issue */
+      #map-canvas label {
+        display: inline;
+        width: auto;
+      }
+      #map-canvas img {
+        max-width: none;
+      }
+    </style>
+    <script src="https://www.google.com/jsapi?" type="text/javascript"></script>
+    <script>
+      google.load('maps', '3.exp', {
+        other_params: 'sensor=false'
+      });
+    </script>
+    <script type="text/javascript">
+      google.maps.visualRefresh = true;
+      function initialize(lat, long) {
+        "use strict";
+        var map = new google.maps.Map(document.getElementById("map-canvas"), {
+            center: new google.maps.LatLng(lat, long),
+            zoom: 10,
+            mapTypeId: 'roadmap'
+          });
+          	
+          
+ 
+      
+        var layer = new google.maps.FusionTablesLayer({
+            query: {
+            select: 'Location',
+			from: '1MsmdOvWLKNNrtKnmoEf2djCc3Rp_gYmueN4FGnc',
+			orderBy: 'ST_DISTANCE(Coordinates, LATLNG(' + lat + ',' + long + '))',
+			limit : 3
+            
+            
+            
+            
+              // Geotagged wikipedia articles, for test purpose
+              // https://www.google.com/fusiontables/DataSource?docid=1LsJLUqlE_P2IYt4wFOHHi59fP_YWzdDoCKLlSPw
+              //select: 'Coordinates',
+              //from: '1LsJLUqlE_P2IYt4wFOHHi59fP_YWzdDoCKLlSPw',
+              //orderBy: 'ST_DISTANCE(Coordinates, LATLNG(' + lat + ',' + long + '))',
+              //limit: 15
+              
+              
+              
+              //  Code for original table from SO-question below     
+              //  select: 'Location',
+              //  from: '16JfuLxarMf5UjxThG2Tno_SZoNSZ_ExwbQyCeu0',
+              //  orderBy: 'ST_DISTANCE(Location, LATLNG(' + lat + ',' + long + '))',
+              
+            }
+          });
+        layer.setMap(map);
+      
+
+    
+      
+      
+      }
+      
+      
+
+            function locate() {
+        var lat = 3.148,
+        long = 101.715;
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function success(position) {
+            lat = position.coords.latitude,
+            long = position.coords.longitude;
+            initialize(lat, long);
+          }, function (error) {
+            switch (error.code) {
+            case error.TIMEOUT:
+              alert('Timeout. Try again.');
+              return initialize(lat, long);
+            case error.POSITION_UNAVAILABLE:
+              alert('Your position is not available at the moment.');
+              return initialize(lat, long);
+            case error.PERMISSION_DENIED:
+              alert('No geolocation. Things wont work out this way.');
+              return initialize(lat, long);
+            case error.UNKNOWN_ERROR:
+              alert('Unknown error. Fyi.');
+              return initialize(lat, long);
+            }
+          });
+        } else {
+          alert('Your device does not support geolocation');
+          // IE-8 issue...
+          return initialize(lat, long);
+        }
+      }
+
+      
+      
+      
+      
+      
+      
+      google.maps.event.addDomListener(window, 'load', locate);
+      
+     </script>
+      
+    </script>
+  </head>
+  <body>
+    <div class="container">     
+      <div id="map-canvas"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Working sidebar from Fusion Table: Basic JSONP Request</title>
+    <style type="text/css">
+      #map-canvas {
+        height: 500px;
+        width: 600px;
+      }
+
+      .name-name {
+        font-weight: bold;
+        margin: 10px 0px 0px 0px;
+        padding: 0px;
+      }
+
+      .address, .coordinates {
+        margin: 0px;
+        padding: 0px;
+      }
+    </style>
+
+<!-- https://developers.google.com/fusiontables/docs/sample_code#ftAPIv1 -->
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript">
+      function initialize() {
+        var query = "SELECT 'Name', Coordinates FROM " +
+            '1MsmdOvWLKNNrtKnmoEf2djCc3Rp_gYmueN4FGnc'	;
+        var encodedQuery = encodeURIComponent(query);
+
+        // Construct the URL
+        var url = ['https://www.googleapis.com/fusiontables/v1/query'];
+        url.push('?sql=' + encodedQuery);
+        url.push('&key=AIzaSyAJ_2Gtxlr4jeFuBup_jyRa5taZGk20JLs');
+        url.push('&callback=?');
+
+        // Send the JSONP request using jQuery
+        $.ajax({
+          url: url.join(''),
+          dataType: 'jsonp',
+          success: function (data) {
+            var rows = data['rows'];
+            var ftData = document.getElementById('ft-data');
+            for (var i in rows) {
+              var name = rows[i][0];
+              var coordinates = rows[i][1];
+              var dataElement = document.createElement('div');
+              var nameElement = document.createElement('p');
+              nameElement.innerHTML = name;
+              nameElement.className = 'name-name';
+              var coordinatesElement = document.createElement('p');
+              coordinatesElement.innerHTML = coordinates;
+              coordinatesElement.className = 'coordinates';
+
+              dataElement.appendChild(nameElement);
+              dataElement.appendChild(coordinatesElement);
+              ftData.appendChild(dataElement);
+            }
+          }
+        });
+      }
+    </script>
+  </head>
+  <body onload="initialize()">
+    <div id="ft-data"></div>
+  </body>
+</html>

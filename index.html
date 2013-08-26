@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="last-modified" content="2013-08-11">
+    <meta charset="utf-8">
+    <title>Get's 3 closest locations to geolocation - (index3)</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style type="text/css">
+        html, body, #map {
+            height: 85%;
+			width: 100%;
+			margin: 0;
+        }
+    </style>
+    <link  rel="stylesheet" href="css/bootstrap.css" media="screen" />
+    <link  rel="stylesheet" href="css/style.css" media="screen" />
+</head>
+<body>
+	<header>
+		<div class="header-column-left">
+			<button type="button" class="btn btn-primary btn-sm">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</button>
+		</div>
+		<div class="header-column-center">
+			<button type="button" class="btn btn-primary btn-sm">
+				<span class="glyphicon glyphicon-home"></span>
+			</button>
+		</div>
+		<div class="header-column-right">
+			<button type="button" class="btn btn-primary btn-sm">
+				<span class="glyphicon glyphicon-map-marker"></span>
+			</button>
+		</div>
+	</header>	
+	
+	<div id="map" class="google-map-canvas"></div>
+	
+	<span class="more-results">
+		<a href="#">more results</a>
+	</span>
+	
+	<table class="table table-condensed table-striped">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Location</th>
+				<th>Distance</th>
+			</tr>
+		</thead>
+		<tbody id="sidebar-data">
+			<!--sidebar.js data goes in here-->
+		</tbody>
+	</table>
+
+
+
+<script src="//maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+<!-- <script src="js/jquery-1.10.2.min.js"></script> -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/map.js"></script>
+
+</body>
+</html>
