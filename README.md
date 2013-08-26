@@ -27,7 +27,7 @@ The most basic setup is "Name" and "Location". "Location" is a set of coordinate
 Contributing Authors
 --------------------
 Currently the only developer working on this project is me, James Mosier. 
-I am open to anyone who wants to contribute ideas, code, or help. Just shoot me a message or request.
+Anyone who wants to contribute ideas, code, or help, just shoot me a message or request.
 
 Contact
 -------
@@ -37,8 +37,5 @@ www.jamesdmosier.com
 
 Copyright & Licensing
 ---------------------
-Original work Copyright (c) 2013 [James D. Mosier] 
+Original work Copyright (c) 2013 James D. Mosier 
 Please read the LICENSE.txt for all copyright and licensing information. 
-
-Simply put, these are my ideas that I have put together and I'm more than happy to involve anyone in the project to make it a better app! Just contact me if you have any questions or would like to work on it.
-
