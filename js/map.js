@@ -13,8 +13,7 @@ function initialize() {
 				lng = position.coords.longitude,
 				//lat=41.081445,lng= -81.519005,
 				pos = new google.maps.LatLng(lat, lng),
-				//var foo = 'ST_DISTANCE(Coordinates, LATLNG(' + lat + ',' + lng + '))',
-				//Query-layer-data STUFF
+				//query from FusionTables for the map
 				map_query = {
 					select: 'Location',
 					from: '1MsmdOvWLKNNrtKnmoEf2djCc3Rp_gYmueN4FGnc',
@@ -40,12 +39,11 @@ function initialize() {
 			
 			map.setCenter(pos);
 			
-			
-			
-			
-			//var theQuery = "SELECT 'Name', Coordinates FROM " + '1MsmdOvWLKNNrtKnmoEf2djCc3Rp_gYmueN4FGnc' + ' LIMIT 3' +
-			 //" ORDERBY ST_DISTANCE(Coordinates, LATLNG(' + lat + ',' + lng + '))";
-			var listQuery = "SELECT 'Name', Coordinates FROM " + '1MsmdOvWLKNNrtKnmoEf2djCc3Rp_gYmueN4FGnc' + ' LIMIT 3';
+			//query for the table
+			var listQuery = "SELECT 'Name', Coordinates FROM " 
+			+ '1MsmdOvWLKNNrtKnmoEf2djCc3Rp_gYmueN4FGnc' 
+			+ ' ORDER BY ST_DISTANCE(Coordinates, LATLNG(' + lat + ',' + lng + '))' 
+			+ ' LIMIT 3';
 			var encodedQuery = encodeURIComponent(listQuery);
 			// Construct the URL
 			var url = ['https://www.googleapis.com/fusiontables/v1/query'];
@@ -78,15 +76,7 @@ function initialize() {
 					}
 				}
 			});
-			
-			
-			
-			
-			
-			
-			
-			
-			
+						
 		}, function() {
 			handleNoGeolocation(true);
 		});
