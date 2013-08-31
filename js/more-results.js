@@ -1,57 +1,25 @@
-var map;
-
-function initialize() {
-	var mapOptions = {
-		zoom: 9,
-		mapTypeId: google.maps.MapTypeId.ROADMAP
-	}
-	map = new google.maps.Map(document.getElementById('map'), mapOptions);
+function initializeResults() {
 	// Try HTML5 geolocation
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(function(position) {
 			var lat = position.coords.latitude,
 				lng = position.coords.longitude,
 				//lat=41.081445,lng= -81.519005,
-				pos = new google.maps.LatLng(lat, lng),
-				//query from FusionTables for the map
-				map_query = {
-					select: 'Location',
-					from: '1MsmdOvWLKNNrtKnmoEf2djCc3Rp_gYmueN4FGnc',
-					limit: 3,
-					orderBy: 'ST_DISTANCE(Coordinates, LATLNG(' + lat + ',' + lng + '))'
-				},
-				ftLayer = new google.maps.FusionTablesLayer({
-					map: map,
-					query: map_query
-				}),
-				geolocMarker = new google.maps.Marker({
-					map: map,
-					position: pos,
-					clickable: true,
-					icon: 'http://labs.google.com/ridefinder/images/mm_20_green.png'
-				});
-			geolocMarker.info = new google.maps.InfoWindow({
-				content: '<span style="font-weight: bold;" class="users-location-marker">Your location</span>'
-			});
-			google.maps.event.addListener(geolocMarker, 'click', function() {
-				geolocMarker.info.open(map, geolocMarker);
-			});
-			
-			map.setCenter(pos);
-			
-		
-			
+				pos = new google.maps.LatLng(lat, lng)
+				
 			//query for the table
 			var listQuery = "SELECT Name, Coordinates FROM " 
 			+ '1MsmdOvWLKNNrtKnmoEf2djCc3Rp_gYmueN4FGnc' 
-			+ ' ORDER BY ST_DISTANCE(Coordinates, LATLNG(' + lat + ',' + lng + '))' 
-			+ ' LIMIT 3';
+			+ ' ORDER BY ST_DISTANCE(Coordinates, LATLNG(' + lat + ',' + lng + '))' + ' LIMIT 25';
+			
 			var encodedQuery = encodeURIComponent(listQuery);
+			
 			// Construct the URL
 			var url = ['https://www.googleapis.com/fusiontables/v1/query'];
 			url.push('?sql=' + encodedQuery);
 			url.push('&key=AIzaSyAJ_2Gtxlr4jeFuBup_jyRa5taZGk20JLs');
 			url.push('&callback=?');
+			
 			// Send the JSONP request using jQuery
 			$.ajax({
 				url: url.join(''),
@@ -63,22 +31,18 @@ function initialize() {
 						var name = rows[i][0];
 						var sidebarCoordinates = rows[i][1];
 						var dataElement = document.createElement('tr');
-						
 						var nameElement = document.createElement('td');
 						nameElement.innerHTML = name;
 						nameElement.className = 'name-name';
-						
 						var coordinatesElement = document.createElement('td');
 						coordinatesElement.innerHTML = sidebarCoordinates;
 						coordinatesElement.className = 'coordinates';
-						
 						dataElement.appendChild(nameElement);
 						dataElement.appendChild(coordinatesElement);
 						ftData.appendChild(dataElement);
 					}
 				}
 			});
-						
 		}, function() {
 			handleNoGeolocation(true);
 		});
@@ -95,12 +59,5 @@ function handleNoGeolocation(errorFlag) {
 	} else {
 		var content = 'Error: Your browser doesn\'t support geolocation.';
 	}
-	var options = {
-		map: map,
-		position: new google.maps.LatLng(41.081445, -81.519005),
-		content: content
-	};
-	var infowindow = new google.maps.InfoWindow(options);
-	map.setCenter(options.position);
 }
-google.maps.event.addDomListener(window, 'load', initialize);
+google.maps.event.addDomListener(window, 'load', initializeResults);

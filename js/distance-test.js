@@ -36,16 +36,9 @@ function initialize() {
 			google.maps.event.addListener(geolocMarker, 'click', function() {
 				geolocMarker.info.open(map, geolocMarker);
 			});
-			
 			map.setCenter(pos);
-			
-		
-			
 			//query for the table
-			var listQuery = "SELECT Name, Coordinates FROM " 
-			+ '1MsmdOvWLKNNrtKnmoEf2djCc3Rp_gYmueN4FGnc' 
-			+ ' ORDER BY ST_DISTANCE(Coordinates, LATLNG(' + lat + ',' + lng + '))' 
-			+ ' LIMIT 3';
+			var listQuery = "SELECT Name, Coordinates FROM " + '1MsmdOvWLKNNrtKnmoEf2djCc3Rp_gYmueN4FGnc' + ' ORDER BY ST_DISTANCE(Coordinates, LATLNG(' + lat + ',' + lng + '))' + ' LIMIT 3';
 			var encodedQuery = encodeURIComponent(listQuery);
 			// Construct the URL
 			var url = ['https://www.googleapis.com/fusiontables/v1/query'];
@@ -63,29 +56,87 @@ function initialize() {
 						var name = rows[i][0];
 						var sidebarCoordinates = rows[i][1];
 						var dataElement = document.createElement('tr');
-						
 						var nameElement = document.createElement('td');
 						nameElement.innerHTML = name;
 						nameElement.className = 'name-name';
-						
 						var coordinatesElement = document.createElement('td');
 						coordinatesElement.innerHTML = sidebarCoordinates;
 						coordinatesElement.className = 'coordinates';
-						
 						dataElement.appendChild(nameElement);
 						dataElement.appendChild(coordinatesElement);
 						ftData.appendChild(dataElement);
-					}
-				}
-			});
+
+						var origins = pos,
+						    destinations = sidebarCoordinates,
+						    service = new google.maps.DistanceMatrixService();
 						
+						service.getDistanceMatrix(
+						    {
+						        origins: [origins],
+						        destinations: [destinations],
+						        travelMode: google.maps.TravelMode.DRIVING,
+						        avoidHighways: false,
+						        avoidTolls: false
+						    }, 
+						    callback
+						);
+						
+						
+						
+						function callback(response, status) {
+						  if (status == google.maps.DistanceMatrixStatus.OK) {
+						    var origins = response.originAddresses;
+						    var destinations = response.destinationAddresses;
+						    var outputDiv = document.getElementById('outputDiv');
+						    outputDiv.innerHTML = '';
+						
+						    for (var i = 0; i < origins.length; i++) {
+						      var results = response.rows[i].elements;
+						      for (var j = 0; j < results.length; j++) {
+						        var element = results[j];
+						        var distance = element.distance.text;
+						        var duration = element.duration.text;
+						        var from = origins[i];
+						        var to = destinations[j];
+						        outputDiv.innerHTML += origins[i] + ' to ' + destinations[j]
+					            + ': ' + results[j].distance.text + ' in '
+					            + results[j].duration.text + '<br>';
+						      }
+						    }
+						  }
+						}
+						
+						
+						
+						
+						
+						
+						/*
+						function callback(response, status) {
+						    var orig = document.getElementById("orig"),
+						        dest = document.getElementById("dest"),
+						        dist = document.getElementById("dist");
+						
+						    if(status=="OK") {
+						        //orig.value = response.destinationAddresses[0];
+						        //dest.value = response.originAddresses[0];
+						        //dist.value = response.rows[0].elements[0].distance.text;						        
+
+						        $("#theresult").text(response.rows[0].elements[0].distance.text + " and " + response.rows[0].elements[0].duration.text);
+						    } else {
+						        alert("Error: " + status);
+						    }*/
+
+				}
+			}
+			});
 		}, function() {
 			handleNoGeolocation(true);
 		});
-	} else {
-		// Browser doesn't support Geolocation
-		handleNoGeolocation(false);
-	}
+} else {
+	// Browser doesn't support Geolocation
+	handleNoGeolocation(false);
+}
 }
 //error handling for geolocation
 

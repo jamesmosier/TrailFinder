@@ -30,8 +30,13 @@ html, body, #map {
 	margin: 0;
 }
 
-#map {
+.google-map-canvas {
 	color: #818181;
+	float: left;
+}
+
+.users-location-marker {
+	font-weight: bold;
 }
 
 header {
