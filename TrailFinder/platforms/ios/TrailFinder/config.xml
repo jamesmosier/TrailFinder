@@ -19,6 +19,7 @@
     <access origin="*.googleapis.*" />
     <access origin="*.googleusercontent.*" />
     <access origin="*.maps.googleapis.com/*" />
+    <access origin="*.gstatic.*" />
     <preference name="KeyboardDisplayRequiresUserAction" value="true" />
     <preference name="SuppressesIncrementalRendering" value="false" />
     <preference name="UIWebViewBounce" value="true" />

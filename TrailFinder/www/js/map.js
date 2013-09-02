@@ -1,12 +1,14 @@
 // Wait for device API libraries to load
-//
 document.addEventListener("deviceready", onDeviceReady, false);
 
 // device APIs are available
-//
 function onDeviceReady() {
-	alert('onDeviceReady1');
-    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+	//this was originally my code...
+    //navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    
+    //stackoverflow.com/questions/12797172/phonegap-failed-to-start-geolocation-service
+    //the question above said to do what i did below..
+    navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: 300000, timeout:10000, enableHighAccuracy : true});
 }
 
 window.onerror = function(message, url, lineNumber) {
@@ -14,15 +16,10 @@ window.onerror = function(message, url, lineNumber) {
     }
 
 var map;
-
 function onSuccess(position) {
-
-	//alert('inside the onSuccess function');
-	
 	if(window.google === undefined) {
         alert("Google Maps didn't load!");
     }
-	
 	
 	var mapOptions = {
 		zoom: 9,
@@ -33,9 +30,7 @@ function onSuccess(position) {
 	map = new google.maps.Map(document.getElementById('map'), mapOptions);
 	// Try HTML5 geolocation
 	if (navigator.geolocation) {
-		alert('i am in the if statement');
 		navigator.geolocation.getCurrentPosition(function(position) {
-			alert('i am in the getcurrentpos function');
 			var lat = position.coords.latitude,
 				lng = position.coords.longitude,
 				//lat=41.081445,lng= -81.519005,

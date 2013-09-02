@@ -53,4 +53,5 @@
     <access origin="*.googleapis.*" subdomains="true" />
     <access origin="*.googleusercontent.*" subdomains="true" />
     <access origin="*.maps.googleapis.com/*" subdomains="true" />
+    <access origin="*.gstatic.*" subdomains="true" />
 </widget>
