@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="last-modified" content="2013-08-26">
+    <meta charset="utf-8">
+    <title>Trail Finder - v0.1</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css" media="screen" />
+    <link rel="stylesheet" href="css/style.css" media="screen" />
+</head>
+<body>
+	<header>
+		<div class="header-column-left">
+			<button type="button" class="btn btn-primary btn-sm" onClick="parent.location='test.html'">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</button>
+		</div>
+		<div class="header-column-center">
+			<button type="button" class="btn btn-primary btn-sm" onclick="parent.location='index.html'">
+				<span class="glyphicon glyphicon-home"></span>
+			</button>
+		</div>
+		<div class="header-column-right">
+			<button type="button" class="btn btn-primary btn-sm">
+				<span class="glyphicon glyphicon-map-marker"></span>
+			</button>
+		</div>
+	</header>	
+
+	<p id="geolocation">Finding geolocation...</p>
+
+
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<!--<script src="//maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+ <script src="js/jquery-1.10.2.min.js"></script> this wasn't working, so I used the CDN url instead 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>-->
+<script src="js/test.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,700,300italic);
+
+
+
+/* Fix Google Maps canvas
+ *
+ * Wrap your Google Maps embed in a `.google-map-canvas` to reset Bootstrap's
+ * global `box-sizing` changes. You may optionally need to reset the `max-width`
+ * on images in case you've applied that anywhere else. (That shouldn't be as
+ * necessary with Bootstrap 3 though as that behavior is relegated to the
+ * `.img-responsive` class.)
+ */
+
+.google-map-canvas,
+.google-map-canvas * { .box-sizing(content-box); }
+
+/* Optional responsive image override 
+img { max-width: none; }*/
+
+html, body {
+	background-color: #282C32;
+	color: #e6e0d5;
+}
+
+html, body {
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+    height: 83%;
+	width: 100%;
+	margin: 0;
+}
+
+#map {
+	width: 300px;
+	height: 300px;
+}
+
+.google-map-canvas {
+	color: #818181;
+	float: left;
+}
+
+.users-location-marker {
+	font-weight: bold;
+}
+
+header {
+	background-image: -ms-linear-gradient(top, #505763 0%, #282C32 100%);
+	background-image: -moz-linear-gradient(top, #505763 0%, #282C32 100%);
+	background-image: -o-linear-gradient(top, #505763 0%, #282C32 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #505763), color-stop(1, #282C32));
+	background-image: -webkit-linear-gradient(top, #505763 0%, #282C32 100%);
+	background-image: linear-gradient(to bottom, #505763 0%, #282C32 100%);
+	float: left;
+	padding: 5px;
+	width: 100%;
+}
+
+.header-column-left {
+	float: left;
+	width: 40%;
+}
+
+.header-column-center {
+	float: left;
+	margin-left: 6%;
+	width: 40%;
+}
+
+.header-column-right {
+	float: right;
+}
+
+.more-results {
+	float: right;
+	font-size: 0.9em;
+	margin: 3px;
+}
+
+.more-results a {
+	color: #2a6496;
+	text-decoration: underline;
+}
+
+.more-results a:hover {
+	color: #2982cf;
+	text-decoration: none;
+}
+
+table {
+	border-top: 1px solid #4B4B4B;
+	margin-top: 2%;
+}
+
+.table-striped tbody > tr:nth-child(odd) > td, .table-striped tbody > tr:nth-child(odd) > th {
+    color: #818181;
+}

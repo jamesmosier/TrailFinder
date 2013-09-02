@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone-no">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi">
+	<title>Our Application</title>
+	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.2.0.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.mobile-1.2.0.js"></script>
+	<script src="cordova.ios.js"></script>
+	<script src="js/mustache.js"></script>
+	<script>
+		var notedata = {notetitle:"", notedetail:"", imagesource:"", notelat:"", notelon:""};
+		var notetemplate = '<input type="text" name="notetitle" id="notetitle" value="{{notetitle}}" placeholder="Note Title"/><textarea cols="40" rows="8" name="notedetail" id="notedetail" placeholder="Note Detail">{{notedetail}}</textarea><input id="addphoto" type="button" data-icon="plus" value="Add a Photo" /><img id="noteimage" src="{{imagesource}}" /><div id="map">Map Placeholder</div><input id="savenote" type="button" data-theme="a" value="Save Note" />';
+		$(document).on("pageinit", function(){
+			$("#newnote").live("pagecreate", function(){
+				var html = Mustache.to_html(notetemplate, notedata);
+				$("#notedetailcontent").html(html);
+			});
+		});
+
+		function init() {
+			document.addEventListener("deviceready", onDeviceReady, false);
+		}
+
+		function onDeviceReady() {
+			var networkstate = navigator.connection.type;
+			if(networkstate == "none")
+			{
+				$(".offline").css("visibility","visible");
+			}
+		}
+	</script>
+</head>
+<body onload="init()">
+	<div data-role="page" id="main">
+	<div data-role="header" class="logo">
+		<img src="img/logo.png" />
+	</div>
+	<div data-role="content">
+		<ul id="notelist" data-role="listview">
+
+		</ul>
+
+		<a href="#newnote" data-role="button" data-icon="plus">New Note</a>
+
+	</div>
+
+	<div data-role="footer" data-theme="c">
+		<h2 class="offline">Offline Mode</h2>
+	</div>
+
+</div>
+<div data-role="page" id="newnote">
+	<div data-role="header" class="logo">
+		<img src="img/logo.png" />
+	</div>
+	<div id="notedetailcontent" data-role="content">
+	</div>
+	<div data-role="footer" data-theme="c">
+		<p>SnapNote!</p>
+	</div>
+</div>
+</div>
+</body>
+</html>
