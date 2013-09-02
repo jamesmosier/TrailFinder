@@ -5,7 +5,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 // device APIs are available
 //
 function onDeviceReady() {
-	alert('onDeviceReady');
+	alert('onDeviceReady1');
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
 }
 
@@ -148,4 +148,4 @@ function handleNoGeolocation(errorFlag) {
 
 
 
-google.maps.event.addDomListener(window, 'load', onSuccess(position));
+google.maps.event.addDomListener(window, 'load', onSuccess);
