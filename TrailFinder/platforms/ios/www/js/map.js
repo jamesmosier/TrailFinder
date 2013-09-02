@@ -8,6 +8,7 @@ function onDeviceReady() {
     
     //stackoverflow.com/questions/12797172/phonegap-failed-to-start-geolocation-service
     //the question above said to do what i did below..
+    //enableHighAccuracy calls my JSON twice...FIGURE IT OUT!
     navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: 300000, timeout:10000, enableHighAccuracy : true});
 }
 
