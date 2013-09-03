@@ -1,7 +1,7 @@
 Documentation
 --------------
 
-About Trail Finder v0.2
+About Trail Finder v0.3
 -----------------------
 Trail Finder is an application that uses geolocation (a users current GPS location) and gives them feedback, telling them the closest trail heads* to them at that location. This project was derived out of a personal need to locate various towpath trails in the NE Ohio area.
 
@@ -20,7 +20,8 @@ What it needs to do:
   2. All locations listed should have the exact distance (miles) from the users current location
   3. Add more data (currently there is only 5 pieces of sample data in Fusion Tables), 
   4. Finish the remaining pages of the app and other features
-  5. Do cool stuff
+  5. Continue development for iOS using Phonegap. So far it runs on the Phonegap framework, it just needs optimized.
+  6. Do cool stuff
 
 Libraries Used
 --------------
@@ -29,6 +30,12 @@ Trail Finder uses many open source libraries to do cool stuff...
   2. Google Maps API
   3. Google Fusion Tables API
   4. Bootstrap 3.0
+  5. Phonegap
+  
+Phonegap Information
+--------------------
+The /Trailhead folder (poor naming convention, I will fix that later) contains a working copy of the Trailfinder app within the Phonegap framework (currently working on iOS). This is the ultimate goal of Trailfinder is to "port" it to iOS and Android for use on mobile devices. 
+So far, Trailfinder compiles and runs in Xcode and the iOS simulator, in which it is able to find the users location and give them the appropriate feedback. Development using Phonegap will be ongoing and will eventually be the main focus once all features have been implemented in a desktop browser.
 
 Code Information
 ----------------
@@ -36,6 +43,8 @@ The index.html file contains all of the code being used (or links to it). For te
 
 Currently, Trail Finder uses very basic technologies. It is written in Javascript/jQuery, HTML5, and CSS3. It queries data from Google Fusion Tables to populate the map and list of locations. 
 There is a Legacy folder that contains old code that either didn't work or was deprecated. The main folder structure contains the root (i.e. index.html) and three folders: CSS, JS, & img. 
+
+THere is also a folder named "Trailfinder" which contains the Phonegap code/framework with a working version of Trailfinder int it.
 
 Google Fusion Table setup
 -------------------------
