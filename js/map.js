@@ -85,10 +85,12 @@ function initialize() {
 	} else {
 		// Browser doesn't support Geolocation
 		handleNoGeolocation(false);
+		document.getElementById('map').style.display = 'none'; 
+		document.getElementById('manual-selection').style.display = 'block';
 	}
 }
-//error handling for geolocation
 
+//error handling for geolocation
 function handleNoGeolocation(errorFlag) {
 	if (errorFlag) {
 		var content = 'Error: The Geolocation service failed.';

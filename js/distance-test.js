@@ -55,6 +55,9 @@ function initialize() {
 					for (var i in rows) {
 						var name = rows[i][0];
 						var sidebarCoordinates = rows[i][1];
+						
+						//var distanceCell = rows[i][2];
+						
 						var dataElement = document.createElement('tr');
 						var nameElement = document.createElement('td');
 						nameElement.innerHTML = name;
@@ -62,9 +65,19 @@ function initialize() {
 						var coordinatesElement = document.createElement('td');
 						coordinatesElement.innerHTML = sidebarCoordinates;
 						coordinatesElement.className = 'coordinates';
+						
+						//var distanceElement = document.createElement('td')
+						//distanceElement.innerHTML = distanceCell;
+						//distanceElement.className = 'distanceTD';
+						
 						dataElement.appendChild(nameElement);
 						dataElement.appendChild(coordinatesElement);
+						//dataElement.appendChild(distanceElement);
 						ftData.appendChild(dataElement);
+					}
+						
+
+
 
 						var origins = pos,
 						    destinations = sidebarCoordinates,
@@ -80,56 +93,46 @@ function initialize() {
 						    }, 
 						    callback
 						);
-						
-						
-						
+
 						function callback(response, status) {
 						  if (status == google.maps.DistanceMatrixStatus.OK) {
 						    var origins = response.originAddresses;
 						    var destinations = response.destinationAddresses;
 						    var outputDiv = document.getElementById('outputDiv');
 						    outputDiv.innerHTML = '';
-						
-						    for (var i = 0; i < origins.length; i++) {
-						      var results = response.rows[i].elements;
+
+						    for (var k = 0; k < origins.length; k++) {
+						      console.log('first for loop..K to be exact');
+						      var results = response.rows[k].elements;
+						      
 						      for (var j = 0; j < results.length; j++) {
+						      console.log('i am inside the var j loop.');
 						        var element = results[j];
 						        var distance = element.distance.text;
 						        var duration = element.duration.text;
-						        var from = origins[i];
+						        var from = origins[k];
 						        var to = destinations[j];
-						        outputDiv.innerHTML += origins[i] + ' to ' + destinations[j]
-					            + ': ' + results[j].distance.text + ' in '
-					            + results[j].duration.text + '<br>';
+						        
+						        console.log('the results are spitting out...');
+						        //this outputs the distance & time to the id="outputDiv" on the distance.html page
+						        //outputDiv.innerHTML += results[j].distance.text 
+						        //+ ' in '
+					            //+ results[j].duration.text + '<br>';
+						        
+						        $("#theresult").text(response.rows[0].elements[0].distance.text + " and " + response.rows[0].elements[0].duration.text);
+ 
+						        
+						        
+						        //outputDiv.innerHTML += origins[i] + ' to ' + destinations[j]
+					            //+ ': ' + results[j].distance.text + ' in '
+					            //+ results[j].duration.text + '<br>';
 						      }
 						    }
 						  }
 						}
-						
-						
-						
-						
-						
-						
-						/*
-						function callback(response, status) {
-						    var orig = document.getElementById("orig"),
-						        dest = document.getElementById("dest"),
-						        dist = document.getElementById("dist");
-						
-						    if(status=="OK") {
-						        //orig.value = response.destinationAddresses[0];
-						        //dest.value = response.originAddresses[0];
-						        //dist.value = response.rows[0].elements[0].distance.text;						        
 
-						        $("#theresult").text(response.rows[0].elements[0].distance.text + " and " + response.rows[0].elements[0].duration.text);
-						    } else {
-						        alert("Error: " + status);
-						    }*/
-
-				}
-			}
-			});
+			}//ends if statement?
+			});//ends ajax call
 		}, function() {
 			handleNoGeolocation(true);
 		});

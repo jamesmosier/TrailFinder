@@ -35,6 +35,22 @@ html, body, #map {
 	float: left;
 }
 
+.back-btn {
+	background: url('../images/back-arrow-300.png') no-repeat 0 0;
+	background-size: 20px 20px;
+	float: left;
+	width: 20px;
+	height: 20px;
+}
+
+.nav-btns {
+	font-size: 1.1em;
+}
+
+.nav-btns:hover {
+	text-decoration: none;
+}
+
 .users-location-marker {
 	font-weight: bold;
 }

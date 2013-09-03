@@ -5,27 +5,32 @@
     <meta charset="utf-8">
     <title>Trail Finder - v0.1</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.css" media="screen" />
-    <link rel="stylesheet" href="css/style.css" media="screen" />
+    <link rel="stylesheet" href="css/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="css/font-awesome.css" media="screen">
+    <link rel="stylesheet" href="css/style.css" media="screen">
 </head>
 <body>
 	<header>
 		<div class="header-column-left">
-			<button type="button" class="btn btn-primary btn-sm">
-				<span class="glyphicon glyphicon-chevron-left"></span>
-			</button>
+			<a href="#" class="nav-btns">
+				<span class="back-btn"></span> back
+			</a>
 		</div>
 		<div class="header-column-center">
-			<button type="button" class="btn btn-primary btn-sm">
-				<span class="glyphicon glyphicon-home"></span>
-			</button>
+			<a href="#" class="nav-btns">
+				<i class="icon-home icon-large"></i>
+			</a>
 		</div>
 		<div class="header-column-right">
-			<button type="button" class="btn btn-primary btn-sm">
-				<span class="glyphicon glyphicon-map-marker"></span>
-			</button>
+			<a onclick="initialize()" class="nav-btns">
+				<i class="icon-location-arrow icon-large"> </i>
+			</a>
 		</div>
 	</header>	
+	
+	<div id="manual-selection" style="display: none;">
+		Your browser doesn't support geolocation...manually pick you location instead.
+	</div>
 	
 	<div id="map" class="google-map-canvas"></div>
 	
@@ -42,7 +47,7 @@
 			</tr>
 		</thead>
 		<tbody id="sidebar-data">
-			<!--sidebar.js data goes in here-->
+			<!-- results table goes in here! -->
 		</tbody>
 	</table>
 
