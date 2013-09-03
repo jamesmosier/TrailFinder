@@ -65,3 +65,5 @@ Copyright & Licensing
 Original work Copyright (c) 2013 James D. Mosier 
 
 Please read the LICENSE.txt for all copyright and licensing information. 
+
+Also note that I do not take credit for any of the libraries, frameworks, or resources used within this application that I have specified above in the Libraries Used section. They the sole work of their authors and I am using them as intended by the licenses specified by those owners.
