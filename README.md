@@ -7,7 +7,7 @@ Trail Finder is an application that uses geolocation (a users current GPS locati
 
 *Trail heads can be found most often at parks and towpaths and are typically for walking or riding a bicycle. 
 
-Version Information (v0.2)
+Version Information (v0.3)
 -----------------------------------
 What it can do so far: 
   1. Find a users location using GPS, return and pinpoint the 3 closest locations to them
