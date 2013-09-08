@@ -53,24 +53,24 @@ function trailfinder_initialize() {
                 dataType: 'jsonp',
                 success: function (data) {
                     var rows = data['rows'];
-                    var ftData = document.getElementById('sidebar-data');
-                    for (var i in rows) {
-                        var name = rows[i][0];
-                        var sidebarCoordinates = rows[i][1];
+                    var resultsTableData = document.getElementById('sidebar-data');
+                    for (var rowNumber in rows) {
+                        var locationName = rows[rowNumber][0];
+                        var locationCoordinates = rows[rowNumber][1];
                         var dataElement = document.createElement('tr');
                         var nameElement = document.createElement('td');
-                        nameElement.innerHTML = name;
+                        nameElement.innerHTML = locationName;
                         nameElement.className = 'name-name';
                         var coordinatesElement = document.createElement('td');
-                        coordinatesElement.innerHTML = sidebarCoordinates;
+                        coordinatesElement.innerHTML = locationCoordinates;
                         coordinatesElement.className = 'coordinates';
                         dataElement.appendChild(nameElement);
                         dataElement.appendChild(coordinatesElement);
-                        ftData.appendChild(dataElement);
+                        resultsTableData.appendChild(dataElement);
                     }
 
                     var origins = pos,
-					    destinations = sidebarCoordinates,
+					    destinations = locationCoordinates,
 					    service = new google.maps.DistanceMatrixService();
 
                     service.getDistanceMatrix(
@@ -92,36 +92,31 @@ function trailfinder_initialize() {
                             var outputDiv = document.getElementById('outputDiv');
                             outputDiv.innerHTML = '';
 
-                            for (var k = 0; k < origins.length; k++) {
-                                console.log('first for loop..K to be exact');
-                                var results = response.rows[k].elements;
+                            for (var i = 0; i < origins.length; i++) {
+                                var results = response.rows[i].elements;
 
                                 for (var j = 0; j < results.length; j++) {
-                                    console.log('i am inside the var j loop.');
                                     var element = results[j];
                                     var distance = element.distance.text;
                                     var duration = element.duration.text;
-                                    var from = origins[k];
+                                    var from = origins[i];
                                     var to = destinations[j];
+                                    console.log('distance matrix results are displaying');
+                                    
+                                    
+                                    
+                                    //$("#theresult").text(response.rows[0].elements[0].distance.text + " and " + response.rows[0].elements[0].duration.text);
 
-                                    console.log('the results are spitting out...');
-                                    $("#theresult").text(response.rows[0].elements[0].distance.text + " and " + response.rows[0].elements[0].duration.text);
-
-                                    //different way of outputting results, as opposed to above
+                                    //different way of outputting results
                                     //outputDiv.innerHTML += results[j].distance.text 
                                     //+ ' in '
-                                    //+ results[j].duration.text + '<br>';
-
-                                    //full output below
-                                    //outputDiv.innerHTML += origins[i] + ' to ' + destinations[j]
-                                    //+ ': ' + results[j].distance.text + ' in '
                                     //+ results[j].duration.text + '<br>';
                                 }
                             }
                         }
                     }
 
-                }
+                }//end success
             });
         }, function () {
             handleNoGeolocation(true);
