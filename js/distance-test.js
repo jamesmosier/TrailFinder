@@ -38,8 +38,8 @@ function trailfinder_initialize() {
             });
             trailfinder_map.setCenter(pos);
             //query for the table
-            var listQuery = "SELECT Name, Coordinates FROM " 
-            + '1MsmdOvWLKNNrtKnmoEf2djCc3Rp_gYmueN4FGnc' 
+            var listQuery = "SELECT Name, Coordinates FROM "
+            + '1MsmdOvWLKNNrtKnmoEf2djCc3Rp_gYmueN4FGnc'
             + ' ORDER BY ST_DISTANCE(Coordinates, LATLNG(' + lat + ',' + lng + '))' + ' LIMIT 3';
             var encodedQuery = encodeURIComponent(listQuery);
             // Construct the URL
@@ -54,9 +54,13 @@ function trailfinder_initialize() {
                 success: function (data) {
                     var rows = data['rows'];
                     var resultsTableData = document.getElementById('sidebar-data');
+                    var locCoordinates = [];
                     for (var rowNumber in rows) {
                         var locationName = rows[rowNumber][0];
                         var locationCoordinates = rows[rowNumber][1];
+
+                        locCoordinates.push(locationCoordinates);
+
                         var dataElement = document.createElement('tr');
                         var nameElement = document.createElement('td');
                         nameElement.innerHTML = locationName;
@@ -68,56 +72,59 @@ function trailfinder_initialize() {
                         dataElement.appendChild(coordinatesElement);
                         resultsTableData.appendChild(dataElement);
                     }
+                    foo(locCoordinates);
+                }//end success
+            });
+            function foo(coords) {
+                var origins = pos,
+                destinations = coords,
+                service = new google.maps.DistanceMatrixService();
 
-                    var origins = pos,
-					    destinations = locationCoordinates,
-					    service = new google.maps.DistanceMatrixService();
+                service.getDistanceMatrix(
+                    {
+                        origins: [origins],
+                        destinations: [destinations],
+                        travelMode: google.maps.TravelMode.DRIVING,
+                        unitSystem: google.maps.UnitSystem.IMPERIAL,
+                        avoidHighways: false,
+                        avoidTolls: false
+                    },
+                    callback
+                );
 
-                    service.getDistanceMatrix(
-					    {
-					        origins: [origins],
-					        destinations: [destinations],
-					        travelMode: google.maps.TravelMode.DRIVING,
-					        unitSystem: google.maps.UnitSystem.IMPERIAL,
-					        avoidHighways: false,
-					        avoidTolls: false
-					    },
-					    callback
-					);
+                function callback(response, status) {
+                    if (status == google.maps.DistanceMatrixStatus.OK) {
+                        var origins = response.originAddresses;
+                        var destinations = response.destinationAddresses;
+                        var outputDiv = document.getElementById('outputDiv');
+                        outputDiv.innerHTML = '';
 
-                    function callback(response, status) {
-                        if (status == google.maps.DistanceMatrixStatus.OK) {
-                            var origins = response.originAddresses;
-                            var destinations = response.destinationAddresses;
-                            var outputDiv = document.getElementById('outputDiv');
-                            outputDiv.innerHTML = '';
+                        for (var i = 0; i < origins.length; i++) {
+                            var results = response.rows[i].elements;
 
-                            for (var i = 0; i < origins.length; i++) {
-                                var results = response.rows[i].elements;
+                            for (var j = 0; j < results.length; j++) {
+                                var element = results[j];
+                                var distance = element.distance.text;
+                                var duration = element.duration.text;
+                                var from = origins[i];
+                                var to = destinations[j];
+                                console.log('distance matrix results are displaying');
 
-                                for (var j = 0; j < results.length; j++) {
-                                    var element = results[j];
-                                    var distance = element.distance.text;
-                                    var duration = element.duration.text;
-                                    var from = origins[i];
-                                    var to = destinations[j];
-                                    console.log('distance matrix results are displaying');
-                                    
-                                    
-                                    
-                                    //$("#theresult").text(response.rows[0].elements[0].distance.text + " and " + response.rows[0].elements[0].duration.text);
 
-                                    //different way of outputting results
-                                    //outputDiv.innerHTML += results[j].distance.text 
-                                    //+ ' in '
-                                    //+ results[j].duration.text + '<br>';
-                                }
+
+                                //$("#theresult").text(response.rows[0].elements[0].distance.text + " and " + response.rows[0].elements[0].duration.text);
+
+                                //different way of outputting results
+                                //outputDiv.innerHTML += results[j].distance.text 
+                                //+ ' in '
+                                //+ results[j].duration.text + '<br>';
                             }
                         }
                     }
+                }
 
-                }//end success
-            });
+            };
+
         }, function () {
             handleNoGeolocation(true);
         });
