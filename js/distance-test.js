@@ -8,6 +8,7 @@ function trailfinder_initialize() {
     trailfinder_map = new google.maps.Map(document.getElementById('map'), mapOptions);
     // Try HTML5 geolocation
     //some simple change
+    //another simple change
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
             var lat = position.coords.latitude,
