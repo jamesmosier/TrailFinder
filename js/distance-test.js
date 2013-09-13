@@ -7,8 +7,6 @@ function trailfinder_initialize() {
     }
     trailfinder_map = new google.maps.Map(document.getElementById('map'), mapOptions);
     // Try HTML5 geolocation
-    //some simple change
-    //another simple change
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
             var lat = position.coords.latitude,
@@ -55,15 +53,13 @@ function trailfinder_initialize() {
                 dataType: 'jsonp',
                 success: function (data) {
                     var rows = data['rows'];
-                    var resultsTableData = document.getElementById('sidebar-data');
+                    window.resultsTableData = document.getElementById('sidebar-data');
                     var locCoordinates = [];
                     for (var rowNumber in rows) {
                         var locationName = rows[rowNumber][0];
                         var locationCoordinates = rows[rowNumber][1];
-
                         locCoordinates.push(locationCoordinates);
-
-                        var dataElement = document.createElement('tr');
+                        window.dataElement = document.createElement('tr');
                         var nameElement = document.createElement('td');
                         nameElement.innerHTML = locationName;
                         nameElement.className = 'name-name';
@@ -74,18 +70,18 @@ function trailfinder_initialize() {
                         dataElement.appendChild(coordinatesElement);
                         resultsTableData.appendChild(dataElement);
                     }
-                    foo(locCoordinates);
+                    distanceMatrixCoords(locCoordinates);
                 }//end success
             });
-            function foo(coords) {
-                var origins = pos,
-                destinations = coords,
-                service = new google.maps.DistanceMatrixService();
+            function distanceMatrixCoords(coords) {
+                var origins = pos;
+                var destinations = coords;
+                var service = new google.maps.DistanceMatrixService();
 
                 service.getDistanceMatrix(
                     {
                         origins: [origins],
-                        destinations: [destinations],
+                        destinations: destinations,
                         travelMode: google.maps.TravelMode.DRIVING,
                         unitSystem: google.maps.UnitSystem.IMPERIAL,
                         avoidHighways: false,
@@ -112,8 +108,14 @@ function trailfinder_initialize() {
                                 var to = destinations[j];
                                 console.log('distance matrix results are displaying');
 
-
-
+                                var distanceElement = document.createElement('td');
+                                distanceElement.innerHTML = results[j].distance.text + "<br/> in <br/>" + results[j].duration.text;
+                                distanceElement.className = 'distance-cell';
+                                dataElement.appendChild(distanceElement);
+                                resultsTableData.appendChild(dataElement);
+                                
+                                
+	                        
                                 //$("#theresult").text(response.rows[0].elements[0].distance.text + " and " + response.rows[0].elements[0].duration.text);
 
                                 //different way of outputting results
