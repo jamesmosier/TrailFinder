@@ -1,13 +1,13 @@
 Documentation
 --------------
 
-About Trail Finder v0.3
+About Trail Finder v0.4
 -----------------------
 Trail Finder is an application that uses geolocation (a users current GPS location) and gives them feedback, telling them the closest trail heads* to them at that location. This project was derived out of a personal need to locate various towpath trails in the NE Ohio area.
 
 *Trail heads can be found most often at parks and towpaths and are typically for walking or riding a bicycle. 
 
-Version Information (v0.3)
+Version Information (v0.4)
 -----------------------------------
 What it can do so far: 
   1. Find a users location using GPS, return and pinpoint the 3 closest locations to them
@@ -17,7 +17,8 @@ What it can do so far:
   
 What it needs to do: 
   1. ~~Return the correct 3 closest locations to the table (already works on the map)~~
-  2. All locations listed should have the exact distance (miles) from the users current location
+  2. ~All locations listed should have the exact distance (miles) from the users current location~
+  	a. The above works, it just doesn't display the output in the correct DIV, yet.
   3. Add more data (currently there is only 5 pieces of sample data in Fusion Tables), 
   4. Finish the remaining pages of the app and other features
   5. Continue development for iOS using Phonegap. So far it runs on the Phonegap framework, it just needs optimized.
