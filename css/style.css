@@ -1,6 +1,22 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300,700,300italic);
 
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot?v=4.0.3');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.0.3') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
+.fa {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 /* Fix Google Maps canvas
  *
@@ -14,18 +30,19 @@
 .google-map-canvas,
 .google-map-canvas * { .box-sizing(content-box); }
 
-/* Optional responsive image override 
-img { max-width: none; }*/
-
 html, body {
 	background-color: #282C32;
 	color: #e6e0d5;
 }
 
+.content {
+	background-color: #282C32;
+}
+
 html, body, #map {
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;
-    height: 83%;
+    height: 60%;
 	width: 100%;
 	margin: 0;
 }
@@ -35,6 +52,10 @@ html, body, #map {
 	float: left;
 }
 
+.location-arrow:before {
+	content: "\f124";
+}
+/*
 .back-btn {
 	background: url('../images/back-arrow-300.png') no-repeat 0 0;
 	background-size: 20px 20px;
@@ -49,7 +70,7 @@ html, body, #map {
 
 .nav-btns:hover {
 	text-decoration: none;
-}
+}*/
 
 .users-location-marker {
 	font-weight: bold;
@@ -62,9 +83,9 @@ header {
 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #505763), color-stop(1, #282C32));
 	background-image: -webkit-linear-gradient(top, #505763 0%, #282C32 100%);
 	background-image: linear-gradient(to bottom, #505763 0%, #282C32 100%);
-	float: left;
+/*	float: left;
 	padding: 5px;
-	width: 100%;
+	width: 100%;*/
 }
 
 .header-column-left {
