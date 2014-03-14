@@ -76,16 +76,18 @@ html, body, #map {
 	font-weight: bold;
 }
 
-header {
-	background-image: -ms-linear-gradient(top, #505763 0%, #282C32 100%);
-	background-image: -moz-linear-gradient(top, #505763 0%, #282C32 100%);
-	background-image: -o-linear-gradient(top, #505763 0%, #282C32 100%);
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #505763), color-stop(1, #282C32));
-	background-image: -webkit-linear-gradient(top, #505763 0%, #282C32 100%);
-	background-image: linear-gradient(to bottom, #505763 0%, #282C32 100%);
+header, header.bar {
+	background-color: #505763;
+    box-shadow: 2px 2px 10px #424C5E;
+    border-bottom: 1px solid #4F5C72;
+    color: #fff;
 /*	float: left;
 	padding: 5px;
 	width: 100%;*/
+}
+
+.bar .title {
+    color: #fff;
 }
 
 .header-column-left {
