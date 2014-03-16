@@ -98,6 +98,9 @@ function trailfinder_initialize() {
                         var outputDiv = document.getElementById('outputDiv');
                         outputDiv.innerHTML = '';
 
+                        var distanceElement = [];
+                        var theRow = [];
+
                         for (var i = 0; i < origins.length; i++) {
                             var results = response.rows[i].elements;
 
@@ -109,18 +112,17 @@ function trailfinder_initialize() {
                                 var to = destinations[j];
                                 console.log('distance matrix results are displaying');
 
-                                var distanceElement = document.createElement('td');
-                                distanceElement.innerHTML = results[j].distance.text + "<br/> in <br/>" + results[j].duration.text;
-                                distanceElement.className = 'distance-cell';
-                                var theRow = $('.row-' + j++).attr('class');//document.getElementsByClassName("row-" + j++);
+
+                                distanceElement[j] = document.createElement('td');
+                                distanceElement[j].innerHTML = results[j].distance.text + "<br/> in <br/>" + results[j].duration.text;
+                                distanceElement[j].className = 'distance-cell';
                                 
-                                console.log(theRow);                                  
-                                $(theRow).append(distanceElement);
-                                
-                                //not sure if i need this...resultsTableData is the <tbody>
-                                //console.log(resultsTableData);
-                                //resultsTableData.appendTo(dataElement);
-                                
+                                theRow = document.getElementsByClassName("row-" + i++);
+
+                                //this previously would shove everything into the last row
+                                //theRow.appendChild(distanceElement[j]);                                
+                                $(theRow).append(distanceElement[j]);
+
                             }
                         }
                     }
