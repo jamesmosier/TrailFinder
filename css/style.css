@@ -37,6 +37,7 @@ html, body {
 
 .content {
 	background-color: #282C32;
+	padding-bottom: 45px;
 }
 
 html, body, #map {

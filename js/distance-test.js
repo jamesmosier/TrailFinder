@@ -41,7 +41,7 @@ function trailfinder_initialize() {
             var listQuery = "SELECT Name, Coordinates FROM "
             + '1MsmdOvWLKNNrtKnmoEf2djCc3Rp_gYmueN4FGnc'
             + ' ORDER BY ST_DISTANCE(Coordinates, LATLNG(' + lat + ',' + lng + '))' + ' LIMIT 3';
-            var encodedQuery = encodeURIComponent(listQuery);
+            var encodedQuery = encodeURIComponent(listQuery);            
             // Construct the URL
             var url = ['https://www.googleapis.com/fusiontables/v1/query'];
             url.push('?sql=' + encodedQuery);
@@ -65,8 +65,13 @@ function trailfinder_initialize() {
                         nameElement.innerHTML = locationName;
                         nameElement.className = 'name-name';
                         var coordinatesElement = document.createElement('td');
-                        coordinatesElement.innerHTML = locationCoordinates;
-                        coordinatesElement.className = 'coordinates';
+
+                        var nospaceCoords = locationCoordinates.replace(/ /g,'');
+                        coordinatesElement.innerHTML = locationCoordinates + "<br/>" 
+                        + "<div class='directions-link'><a href='http://maps.google.com/maps?saddr="
+                        + lat + ',' + lng + "&daddr=" + nospaceCoords + "' target='_blank'>get directions</a></div>";
+                
+                        coordinatesElement.className = 'coordinates';                
                         dataElement.appendChild(nameElement);
                         dataElement.appendChild(coordinatesElement);
                         resultsTableData.appendChild(dataElement);
@@ -95,8 +100,9 @@ function trailfinder_initialize() {
                     if (status == google.maps.DistanceMatrixStatus.OK) {
                         var origins = response.originAddresses;
                         var destinations = response.destinationAddresses;
-                        var outputDiv = document.getElementById('outputDiv');
-                        outputDiv.innerHTML = '';
+                        //i dont think this is needed anymore
+                        // var outputDiv = document.getElementById('outputDiv');
+                        // outputDiv.innerHTML = '';
 
                         var distanceElement = [];
                         var theRow = [];
