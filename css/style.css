@@ -18,34 +18,27 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Fix Google Maps canvas
- *
- * Wrap your Google Maps embed in a `.google-map-canvas` to reset Bootstrap's
- * global `box-sizing` changes. You may optionally need to reset the `max-width`
- * on images in case you've applied that anywhere else. (That shouldn't be as
- * necessary with Bootstrap 3 though as that behavior is relegated to the
- * `.img-responsive` class.)
- */
-
 .google-map-canvas,
-.google-map-canvas * { .box-sizing(content-box); }
+.google-map-canvas * { 
+	.box-sizing(content-box); 
+}
 
 html, body {
 	background-color: #282C32;
 	color: #e6e0d5;
 }
 
-.content {
-	background-color: #282C32;
-	padding-bottom: 45px;
-}
-
 html, body, #map {
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;
-    height: 60%;
+    height: 55%;
 	width: 100%;
 	margin: 0;
+}
+
+.content {
+	background-color: #282C32;
+	padding-bottom: 45px;
 }
 
 .google-map-canvas {
@@ -65,23 +58,6 @@ html, body, #map {
 	margin-right: 5px;
 }
 
-/*
-.back-btn {
-	background: url('../images/back-arrow-300.png') no-repeat 0 0;
-	background-size: 20px 20px;
-	float: left;
-	width: 20px;
-	height: 20px;
-}
-
-.nav-btns {
-	font-size: 1.1em;
-}
-
-.nav-btns:hover {
-	text-decoration: none;
-}*/
-
 .users-location-marker {
 	font-weight: bold;
 }
@@ -91,9 +67,6 @@ header, header.bar {
     box-shadow: 2px 2px 10px #424C5E;
     border-bottom: 1px solid #4F5C72;
     color: #fff;
-/*	float: left;
-	padding: 5px;
-	width: 100%;*/
 }
 
 .bar .title {
@@ -116,20 +89,16 @@ header, header.bar {
 }
 
 .more-results {
-	float: right;
-	font-size: 0.9em;
-	margin: 3px;
+	background-color: #414D5F;
+	border: 1px solid #15558D;
+	color: #F0F0F0;
+	margin-top: 35px;
+	margin-bottom: 35px;
 }
 
-.more-results a {
-	color: #2a6496;
-	text-decoration: underline;
-}
-
-.more-results a:hover {
-	color: #2982cf;
-	text-decoration: none;
-}
+	.more-results:active {
+		background-color: #2C3849;
+	}
 
 table {
 	border-top: 1px solid #4B4B4B;
@@ -137,5 +106,14 @@ table {
 }
 
 .table-striped tbody > tr:nth-child(odd) > td, .table-striped tbody > tr:nth-child(odd) > th {
-    color: #818181;
+    color: #505050;
+}
+
+.coordinates {
+	font-size: 14px;
+}
+
+.directions-link {
+	margin-top: 10px;
+	margin-bottom: 5px;
 }
