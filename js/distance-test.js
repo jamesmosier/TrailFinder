@@ -53,13 +53,13 @@ function trailfinder_initialize() {
                 dataType: 'jsonp',
                 success: function (data) {
                     var rows = data['rows'];
-                    window.resultsTableData = document.getElementById('sidebar-data');
+                    var resultsTableData = document.getElementById('sidebar-data');
                     var locCoordinates = [];
                     for (var rowNumber in rows) {
                         var locationName = rows[rowNumber][0];
                         var locationCoordinates = rows[rowNumber][1];
                         locCoordinates.push(locationCoordinates);
-                        window.dataElement = document.createElement('tr');
+                        var dataElement = document.createElement('tr');
                         dataElement.className = "row-" + rowNumber++;
                         var nameElement = document.createElement('td');
                         nameElement.innerHTML = locationName;
@@ -68,8 +68,8 @@ function trailfinder_initialize() {
 
                         var nospaceCoords = locationCoordinates.replace(/ /g,'');
                         coordinatesElement.innerHTML = locationCoordinates + "<br/>" 
-                        + "<div class='directions-link'><a href='http://maps.google.com/maps?saddr="
-                        + lat + ',' + lng + "&daddr=" + nospaceCoords + "' target='_blank'>get directions</a></div>";
+                        + "<div class='directions-link'><a class='btn btn-primary' href='http://maps.google.com/maps?saddr="
+                        + lat + ',' + lng + "&daddr=" + nospaceCoords + "' target='_blank'><span class='fa icon-in-btn map-marker'></span>get directions</a></div>";
                 
                         coordinatesElement.className = 'coordinates';                
                         dataElement.appendChild(nameElement);
@@ -105,7 +105,7 @@ function trailfinder_initialize() {
                         // outputDiv.innerHTML = '';
 
                         var distanceElement = [];
-                        var theRow = [];
+                        var theRow = null;
 
                         for (var i = 0; i < origins.length; i++) {
                             var results = response.rows[i].elements;

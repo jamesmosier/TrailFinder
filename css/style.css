@@ -56,6 +56,15 @@ html, body, #map {
 .location-arrow:before {
 	content: "\f124";
 }
+
+.map-marker:before {
+	content: "\f041";
+}
+
+.icon-in-btn {
+	margin-right: 5px;
+}
+
 /*
 .back-btn {
 	background: url('../images/back-arrow-300.png') no-repeat 0 0;
