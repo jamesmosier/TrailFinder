@@ -41,7 +41,7 @@ function trailfinder_initialize() {
             var listQuery = "SELECT Name, Coordinates FROM "
             + '1MsmdOvWLKNNrtKnmoEf2djCc3Rp_gYmueN4FGnc'
             + ' ORDER BY ST_DISTANCE(Coordinates, LATLNG(' + lat + ',' + lng + '))' + ' LIMIT 3';
-            var encodedQuery = encodeURIComponent(listQuery);
+            var encodedQuery = encodeURIComponent(listQuery);            
             // Construct the URL
             var url = ['https://www.googleapis.com/fusiontables/v1/query'];
             url.push('?sql=' + encodedQuery);
@@ -65,8 +65,13 @@ function trailfinder_initialize() {
                         nameElement.innerHTML = locationName;
                         nameElement.className = 'name-name';
                         var coordinatesElement = document.createElement('td');
-                        coordinatesElement.innerHTML = locationCoordinates;
-                        coordinatesElement.className = 'coordinates';
+
+                        var nospaceCoords = locationCoordinates.replace(/ /g,'');
+                        coordinatesElement.innerHTML = locationCoordinates + "<br/>" 
+                        + "<div class='directions-link'><a href='http://maps.google.com/maps?saddr="
+                        + lat + ',' + lng + "&daddr=" + nospaceCoords + "' target='_blank'>get directions</a></div>";
+                
+                        coordinatesElement.className = 'coordinates';                
                         dataElement.appendChild(nameElement);
                         dataElement.appendChild(coordinatesElement);
                         resultsTableData.appendChild(dataElement);
@@ -95,8 +100,12 @@ function trailfinder_initialize() {
                     if (status == google.maps.DistanceMatrixStatus.OK) {
                         var origins = response.originAddresses;
                         var destinations = response.destinationAddresses;
-                        var outputDiv = document.getElementById('outputDiv');
-                        outputDiv.innerHTML = '';
+                        //i dont think this is needed anymore
+                        // var outputDiv = document.getElementById('outputDiv');
+                        // outputDiv.innerHTML = '';
+
+                        var distanceElement = [];
+                        var theRow = [];
 
                         for (var i = 0; i < origins.length; i++) {
                             var results = response.rows[i].elements;
@@ -109,18 +118,17 @@ function trailfinder_initialize() {
                                 var to = destinations[j];
                                 console.log('distance matrix results are displaying');
 
-                                var distanceElement = document.createElement('td');
-                                distanceElement.innerHTML = results[j].distance.text + "<br/> in <br/>" + results[j].duration.text;
-                                distanceElement.className = 'distance-cell';
-                                var theRow = $('.row-' + j++).attr('class');//document.getElementsByClassName("row-" + j++);
+
+                                distanceElement[j] = document.createElement('td');
+                                distanceElement[j].innerHTML = results[j].distance.text + "<br/> in <br/>" + results[j].duration.text;
+                                distanceElement[j].className = 'distance-cell';
                                 
-                                console.log(theRow);                                  
-                                $(theRow).append(distanceElement);
-                                
-                                //not sure if i need this...resultsTableData is the <tbody>
-                                //console.log(resultsTableData);
-                                //resultsTableData.appendTo(dataElement);
-                                
+                                theRow = document.getElementsByClassName("row-" + i++);
+
+                                //this previously would shove everything into the last row
+                                //theRow.appendChild(distanceElement[j]);                                
+                                $(theRow).append(distanceElement[j]);
+
                             }
                         }
                     }
