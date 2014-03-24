@@ -54,7 +54,7 @@
 
 
 	<nav class="bar bar-tab">
-	  <a class="tab-item active" href="#">
+	  <a class="tab-item active" href="javascript:void(0);" data-jsless="[{ name:'html', url:'map.html', onSuccess:'.content' }]">
 	    <span class="icon icon-home"></span>
 	    <span class="tab-label">Home</span>
 	  </a>
@@ -73,8 +73,18 @@
 	</nav>
 
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="lib/jsless.js"></script>
 <script src="js/map.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function () {	    
+	    $("body").jsless();	    
+	});
+</script>
+
+<!-- data-jsless="[{ name:'execute', event: 'load', method:'css' , target:'#foo', params: ['width', '2000px'] }]"
+data-jsless="[{ name:'execute', method:'click' , target:'#cancelSwitch' }]" -->
 
 </body>
 </html>
