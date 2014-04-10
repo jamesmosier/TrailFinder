@@ -117,3 +117,39 @@ table {
 	margin-top: 10px;
 	margin-bottom: 5px;
 }
+
+#trail1 {
+	margin: 5%;
+}
+
+#trail1 p {
+	color: #fff;
+}
+
+.favs-list {
+	margin: 3%;
+	padding: 1%;
+	background-color: #999;
+}
+
+.favs-list ul li {
+	color: #000;
+}
+
+.add-fav {
+	cursor: pointer;
+}
+
+.star-filled { 
+	display: none;
+}
+.add-fav:hover .star-filled {
+	display : block;
+}
+.add-fav:hover .icon-star {
+	display : none;
+}
+
+
+
+

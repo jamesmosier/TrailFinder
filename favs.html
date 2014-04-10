@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="last-modified" content="2013-08-26">
+    <meta charset="utf-8">
+    <title>Trail Finder - v0.1 - RATCHET</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="stylesheet" href="css/custom-bootstrap.css" />
+    <link rel="stylesheet" href="css/ratchet.css" />
+    <!-- <link rel="stylesheet" href="css/font-awesome.css" /> -->
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="lib/ratchet.js"></script>
+    
+</head>
+<body>
+	<header class="bar bar-nav">
+		 <h1 class="title">Trailfinder</h1>
+	</header>	
+
+
+
+	<div class="content" data-jsless-widget="FavWidget">
+
+		<div id="trail1">
+			<div id="fav-one">North Akron Valley Park</div>
+			<div class="add-fav" data-jsless="[{ name: 'addFav', value: '#fav-one' }]">
+				<span class="icon icon-star"></span>
+				<span class="icon icon-star-filled star-filled"></span>
+			</div>
+
+			
+
+			<!-- <p id="fav-value">East Akron Path2</p>
+			<button type="button" data-add="fav" class="btn btn-primary" data-jsless="[{ name: 'addFav', value: '#fav-value' }]">
+				add to favs
+			</button> -->
+		</div>
+
+		<div class="favs-list" data-jsless="[{ name: 'getFav', event: 'load', eventSource: 'widget', target: '.favs-list ul li' }]">
+			<ul>
+				<li></li>
+			</ul>
+		</div>
+
+	</div><!--end .content-->
+
+
+
+
+	<nav class="bar bar-tab">
+	  <a class="tab-item active" href="#">
+	    <span class="icon icon-home"></span>
+	    <span class="tab-label">Home</span>
+	  </a>
+	  <a class="tab-item" href="#">
+	    <span class="icon icon-star-filled"></span>
+	    <span class="tab-label">Favorites</span>
+	  </a>
+	  <a class="tab-item" href="#">
+	    <span class="icon icon-search"></span>
+	    <span class="tab-label">Search</span>
+	  </a>
+	  <a class="tab-item" href="#">
+	    <span class="icon icon-gear"></span>
+	    <span class="tab-label">Settings</span>
+	  </a>
+	</nav>
+
+<!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script> -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="lib/jsless.js"></script>
+<script src="lib/jsless.trailfinder.js"></script>
+<script src="js/favorites.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("body").jsless();
+	});
+</script>
+
+</body>
+</html>
