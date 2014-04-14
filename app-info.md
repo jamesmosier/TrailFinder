@@ -2,12 +2,12 @@
 cd to app folder
 type: reload -b
 
-(runs on localhost:8080)
+If you want to specify port (runs on localhost:8080 otherwise): 
+reload -p 8889
+
 source: https://www.npmjs.org/package/reload
 
-#old way of doing it with my own server.js file#
-##To Start Server##
-npm start 
 
-##To End Server##
+
+##To Terminate##
 CTRL-C 

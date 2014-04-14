@@ -2,7 +2,7 @@
 <html lang="en" ng-app="tFinder">
 <head>
   <meta charset="utf-8">
-    <title>Trail Finder - v0.1 - RATCHET</title>
+    <title>Trail Finder - v0.1.0 (angularJS refactor)</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="css/custom-bootstrap.css" />
     <link rel="stylesheet" href="css/ratchet.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <script src="lib/ratchet.js"></script>
-  
+    <!--<script src="lib/ratchet.js"></script>-->
+    <script src="../node_modules/reload/lib/reload.js"></script>
+    
 </head>
 <body>
 
@@ -20,15 +21,7 @@
   </header> 
 
 
-  <div class="content" data-role="page" id="index">
-
-    <a href="map.html" class="btn btn-block btn-primary" data-ignore="push">
-      Find Trails
-    </a>
-
-  </div><!--end .content-->
-
-
+  <div ng-view></div>
 
 
   <nav class="bar bar-tab">

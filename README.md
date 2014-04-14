@@ -40,12 +40,26 @@ So far, Trailfinder compiles and runs in Xcode and the iOS simulator, in which i
 
 Code Information
 ----------------
-The index.html file contains all of the code being used (or links to it). For testing, use these coordinates (41.0731, 81.5178) -- which is Akron, Ohio. 
+The index.html file contains all of the code being used (or links to it). For testing, use these coordinates (**41.0731, 81.5178**) -- which is Akron, Ohio. 
 
-Currently, Trail Finder uses very basic technologies. It is written in Javascript/jQuery, HTML5, and CSS3. It queries data from Google Fusion Tables to populate the map and list of locations. 
-There is a Legacy folder that contains old code that either didn't work or was deprecated. The main folder structure contains the root (i.e. index.html) and three folders: CSS, JS, & img. 
+Currently, Trail Finder uses very basic technologies. It is written in AngularJS, JavaScript, HTML5, and CSS3. It queries data from Google Fusion Tables to populate the map and list of locations. 
+~There is a Legacy folder that contains old code that either didn't work or was deprecated. The main folder structure contains the root (i.e. index.html) and three folders: CSS, JS, & img. ~
 
 THere is also a folder named "Trailfinder" which contains the Phonegap code/framework with a working version of Trailfinder int it.
+
+Running localhost
+-----------------
+**To Start reload**
+`cd` to app folder
+type: `reload -b`
+
+If you want to specify port (*runs on localhost:8080 otherwise*): 
+`reload -p 8889`
+
+source: [npm reload](https://www.npmjs.org/package/reload)
+
+**To Terminate**
+CTRL-C 
 
 Google Fusion Table setup
 -------------------------
