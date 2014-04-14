@@ -10,7 +10,6 @@
     
     <link rel="stylesheet" href="css/custom-bootstrap.css" />
     <link rel="stylesheet" href="css/ratchet.css" />
-    <!-- <link rel="stylesheet" href="css/font-awesome.css" /> -->
     <link rel="stylesheet" href="css/style.css" />
     <script src="lib/ratchet.js"></script>
     
@@ -22,9 +21,11 @@
 
 
 
-	<div class="content">
+	<div class="content" data-role="page" id="index">
 
-		<a href="map.html" class="btn btn-block btn-primary">Find Trails</a>
+		<a href="map.html" class="btn btn-block btn-primary" data-ignore="push">
+			Find Trails
+		</a>
 
 	</div><!--end .content-->
 
@@ -50,9 +51,11 @@
 	  </a>
 	</nav>
 
-<!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
 
+<script src="lib/jquery-1.10.2.min.js"></script>
+<script src="lib/jsless.js"></script>
+<script src="lib/jsless.trailfinder.js"></script>
+<!-- <script src="lib/jquery.mobile.custom.js"></script> -->
 
 
 </body>
