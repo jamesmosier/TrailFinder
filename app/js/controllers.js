@@ -2,10 +2,10 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', [])
-  .controller('MyCtrl1', [function() {
+angular.module('tFinder.controllers', [])
+  .controller('HomeCtrl', [function() {
 
   }])
-  .controller('MyCtrl2', [function() {
+  .controller('MapCtrl', [function() {
 
   }]);
