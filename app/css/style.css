@@ -113,12 +113,31 @@ table {
 }
 
 .coordinates {
-	font-size: 14px;
+	font-size: 12px;
 }
 
 .directions-link {
-	margin-top: 10px;
+	position: absolute;
+	right: 5px;
+	top: 25px;
+}
+
+#location-data {
+	float: left;
+	width: 100%;
+}
+
+.name-name {
+	color: #424242;
+	font-weight: 100;
+	font-size: 20px;
+	margin-top: 0;
 	margin-bottom: 5px;
+}
+
+.distance-cell {
+	color: #444;
+	font-size: 15px;
 }
 
 #trail1 {

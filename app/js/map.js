@@ -53,23 +53,23 @@ function trailfinder_initialize() {
                 dataType: 'jsonp',
                 success: function (data) {
                     var rows = data['rows'];
-                    var resultsTableData = document.getElementById('sidebar-data');
+                    var resultsTableData = document.getElementById('location-data');
                     var locCoordinates = [];
                     for (var rowNumber in rows) {
                         var locationName = rows[rowNumber][0];
                         var locationCoordinates = rows[rowNumber][1];
                         locCoordinates.push(locationCoordinates);
-                        var dataElement = document.createElement('tr');
-                        dataElement.className = "row-" + rowNumber++;
-                        var nameElement = document.createElement('td');
+                        var dataElement = document.createElement('li');
+                        dataElement.className = "row-" + rowNumber++ + " table-view-cell";
+                        var nameElement = document.createElement('p');
                         nameElement.innerHTML = locationName;
                         nameElement.className = 'name-name';
-                        var coordinatesElement = document.createElement('td');
+                        var coordinatesElement = document.createElement('p');
 
                         var nospaceCoords = locationCoordinates.replace(/ /g,'');
-                        coordinatesElement.innerHTML = locationCoordinates + "<br/>" 
-                        + "<div class='directions-link'><a class='btn btn-primary' href='http://maps.google.com/maps?saddr="
-                        + lat + ',' + lng + "&daddr=" + nospaceCoords + "' target='_blank'><span class='fa icon-in-btn map-marker'></span>get directions</a></div>";
+                        coordinatesElement.innerHTML = locationCoordinates;
+                        $(dataElement).append("<div class='directions-link'><a class='btn btn-primary' href='http://maps.google.com/maps?saddr="
+                        + lat + ',' + lng + "&daddr=" + nospaceCoords + "' target='_blank'><span class='fa icon-in-btn map-marker'></span>get directions</a></div>");
                 
                         coordinatesElement.className = 'coordinates';                
                         dataElement.appendChild(nameElement);
@@ -100,10 +100,6 @@ function trailfinder_initialize() {
                     if (status == google.maps.DistanceMatrixStatus.OK) {
                         var origins = response.originAddresses;
                         var destinations = response.destinationAddresses;
-                        //i dont think this is needed anymore
-                        // var outputDiv = document.getElementById('outputDiv');
-                        // outputDiv.innerHTML = '';
-
                         var distanceElement = [];
                         var theRow = null;
 
@@ -116,17 +112,12 @@ function trailfinder_initialize() {
                                 var duration = element.duration.text;
                                 var from = origins[i];
                                 var to = destinations[j];
-                                //console.log('distance matrix results are displaying');
 
-
-                                distanceElement[j] = document.createElement('td');
-                                distanceElement[j].innerHTML = results[j].distance.text + "<br/> in <br/>" + results[j].duration.text;
+                                distanceElement[j] = document.createElement('p');
+                                distanceElement[j].innerHTML = results[j].distance.text + " - " + results[j].duration.text + " away";
                                 distanceElement[j].className = 'distance-cell';
                                 
-                                theRow = document.getElementsByClassName("row-" + i++);
-
-                                //this previously would shove everything into the last row
-                                //theRow.appendChild(distanceElement[j]);                                
+                                theRow = document.getElementsByClassName("row-" + i++);                            
                                 $(theRow).append(distanceElement[j]);
 
                             }
