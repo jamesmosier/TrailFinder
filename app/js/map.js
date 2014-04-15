@@ -15,7 +15,7 @@ function trailfinder_initialize() {
                 pos = new google.maps.LatLng(lat, lng),
                 //query from FusionTables for the map
                 map_query = {
-                    select: 'Location',
+                    select: 'Coordinates',
                     from: '1MsmdOvWLKNNrtKnmoEf2djCc3Rp_gYmueN4FGnc',
                     limit: 3,
                     orderBy: 'ST_DISTANCE(Coordinates, LATLNG(' + lat + ',' + lng + '))'
