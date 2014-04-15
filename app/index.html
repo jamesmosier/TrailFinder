@@ -2,7 +2,7 @@
 <html lang="en" ng-app="tFinder">
 <head>
   <meta charset="utf-8">
-    <title>Trail Finder - v0.1.0 (angularJS refactor)</title>
+    <title>Trailfinder - v0.1.0</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -11,25 +11,25 @@
     <link rel="stylesheet" href="css/ratchet.css" />
     <link rel="stylesheet" href="css/style.css" />
     <!--<script src="lib/ratchet.js"></script>-->
-    <script src="../node_modules/reload/lib/reload.js"></script>
+    
     
 </head>
 <body>
 
   <header class="bar bar-nav">
-     <h1 class="title">Trailfinder</h1>
+     <h1 class="title" ng-bind="title"></h1>
   </header> 
 
 
-  <div ng-view></div>
+  <div class="content" ng-view></div>
 
 
   <nav class="bar bar-tab">
-    <a class="tab-item active" href="index.html">
+    <a class="tab-item active" href="/home">
       <span class="icon icon-home"></span>
       <span class="tab-label">Home</span>
     </a>
-    <a class="tab-item" href="#">
+    <a class="tab-item" href="/fav">
       <span class="icon icon-star-filled"></span>
       <span class="tab-label">Favorites</span>
     </a>
@@ -58,12 +58,18 @@
   <div>Angular seed app1fffaaa22323fFFF: v<span app-version></span></div> -->
 
 
-  <script src="../bower_components/angular/angular.js"></script>
-  <script src="../bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-local-storage/angular-local-storage.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
   <script src="js/app.js"></script>
   <script src="js/services.js"></script>
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="js/map.js"></script>
 </body>
 </html>

@@ -28,12 +28,15 @@ html, body {
 	color: #e6e0d5;
 }
 
-html, body, #map {
+html, body {
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;
-    height: 55%;
-	width: 100%;
+}
+
+#map {
 	margin: 0;
+	height: 55%;
+	width: 100%;
 }
 
 .content {

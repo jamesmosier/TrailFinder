@@ -116,7 +116,7 @@ function trailfinder_initialize() {
                                 var duration = element.duration.text;
                                 var from = origins[i];
                                 var to = destinations[j];
-                                console.log('distance matrix results are displaying');
+                                //console.log('distance matrix results are displaying');
 
 
                                 distanceElement[j] = document.createElement('td');
