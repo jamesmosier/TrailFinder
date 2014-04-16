@@ -16,9 +16,18 @@
 </head>
 <body>
 
-  <header class="bar bar-nav">
+  <!-- <header class="bar bar-nav">
      <h1 class="title" ng-bind="title"></h1>
-  </header> 
+  </header>  -->
+
+  <header class="bar bar-nav">
+     <button class="btn btn-link btn-nav pull-left">
+        <span class="icon icon-left-nav"></span>
+        Back
+     </button>
+     <a class="icon fa location-arrow pull-right"></a>
+     <h1 class="title" ng-bind="title"></h1>
+  </header>
 
 
   <div class="content" ng-view></div>

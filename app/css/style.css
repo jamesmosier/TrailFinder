@@ -28,20 +28,47 @@ html, body {
 	color: #e6e0d5;
 }
 
-html, body {
+html, body, input, textarea, button, select {
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;
-}
-
-#map {
-	margin: 0;
-	height: 55%;
-	width: 100%;
 }
 
 .content {
 	background-color: #282C32;
 	padding-bottom: 45px;
+}
+
+header, header.bar {
+	background-color: #3B414B;
+    /*box-shadow: 2px 2px 10px #424C5E;
+    border-bottom: 1px solid #1A2331;*/
+    color: #fff;
+}
+
+.bar .title {
+    color: #fff;
+}
+
+.header-column-left {
+	float: left;
+	width: 40%;
+}
+
+.header-column-center {
+	float: left;
+	margin-left: 6%;
+	width: 40%;
+}
+
+.header-column-right {
+	float: right;
+}
+
+/* ====== Map ====== */
+#map {
+	margin: 0;
+	height: 55%;
+	width: 100%;
 }
 
 .google-map-canvas {
@@ -65,36 +92,11 @@ html, body {
 	font-weight: bold;
 }
 
-header, header.bar {
-	background-color: #505763;
-    box-shadow: 2px 2px 10px #424C5E;
-    border-bottom: 1px solid #4F5C72;
-    color: #fff;
-}
-
-.bar .title {
-    color: #fff;
-}
-
-.header-column-left {
-	float: left;
-	width: 40%;
-}
-
-.header-column-center {
-	float: left;
-	margin-left: 6%;
-	width: 40%;
-}
-
-.header-column-right {
-	float: right;
-}
-
 .more-results {
 	background-color: #414D5F;
-	border: 1px solid #15558D;
+	border: 1px solid #3E5C75;
 	color: #F0F0F0;
+	font-weight: 300;
 	margin-top: 35px;
 	margin-bottom: 35px;
 }
@@ -103,23 +105,14 @@ header, header.bar {
 		background-color: #2C3849;
 	}
 
-table {
-	border-top: 1px solid #4B4B4B;
-	margin-top: 2%;
-}
-
-.table-striped tbody > tr:nth-child(odd) > td, .table-striped tbody > tr:nth-child(odd) > th {
-    color: #505050;
-}
-
 .coordinates {
-	font-size: 12px;
+	font-size: 10px;
 }
 
 .directions-link {
 	position: absolute;
 	right: 5px;
-	top: 25px;
+	top: 33px;
 }
 
 #location-data {
@@ -127,17 +120,21 @@ table {
 	width: 100%;
 }
 
+	#location-data > .table-view-cell {
+		padding: 6px 65px 6px 15px;
+	}
+
 .name-name {
 	color: #424242;
 	font-weight: 100;
-	font-size: 20px;
+	font-size: 18px;
 	margin-top: 0;
 	margin-bottom: 5px;
 }
 
 .distance-cell {
 	color: #444;
-	font-size: 15px;
+	font-size: 13px;
 }
 
 #trail1 {
@@ -148,6 +145,7 @@ table {
 	color: #fff;
 }
 
+/* ====== Favorites ====== */
 .favs-list {
 	margin: 3%;
 	padding: 1%;
@@ -165,9 +163,11 @@ table {
 .star-filled { 
 	display: none;
 }
+
 .add-fav:hover .star-filled {
 	display : block;
 }
+
 .add-fav:hover .icon-star {
 	display : none;
 }
