@@ -15,14 +15,19 @@ What it can do so far:
   3. Write out a list of 3 locations (not sorted yet)
   4. Give them an info window with location info
   
-What it needs to do: 
+To Do: 
   1. ~~Return the correct 3 closest locations to the table (already works on the map)~~
   2. ~All locations listed should have the exact distance (miles) from the users current location~
   	a. The above works, it just doesn't display the output in the correct DIV, yet.
-  3. Add more data (currently there is only 5 pieces of sample data in Fusion Tables), 
-  4. Finish the remaining pages of the app and other features
-  5. Continue development for iOS using Phonegap. So far it runs on the Phonegap framework, it just needs optimized.
-  6. Do cool stuff
+  3. Add more data (currently there is only about 20 pieces of sample data in Fusion Tables), 
+  4. *More Results* should show '50' more of the closest locations.
+    a. Need to create directive to update map plugins queryLimit to 50
+    b. Reload page to show updated locations
+    c. On reload it will obviously need to persist that queryLimit of 50
+  5. Create **favorites** UI and workflow. Should be able to add/remove/sort favs.
+  6. Create search functionality
+  7. Add ability to swipe a row to show other options (or buttons to show options).
+  8. Integrate with Phonegap in order for above to work (swipe gestures).
 
 Libraries Used
 --------------
