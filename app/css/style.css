@@ -67,7 +67,8 @@ header, header.bar {
 /* ====== Map ====== */
 #map {
 	margin: 0;
-	height: 55%;
+	/*height: 55%;*/
+	height: 300px;
 	width: 100%;
 }
 

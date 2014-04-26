@@ -158,7 +158,7 @@
             var infowindow = new google.maps.InfoWindow(options);
             trailfinder_map.setCenter(options.position);
         }
-        google.maps.event.addDomListener(window, 'load', trailfinder_initialize);
+        google.maps.event.addDomListener(window, 'load', trailfinder_initialize());
 
 
     }

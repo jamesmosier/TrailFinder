@@ -4,6 +4,7 @@
 // Declare app level module which depends on filters, and services
 angular.module('tFinder', [
   'ngRoute',
+  'ui.jq',
   //'tFinder.filters',
   //'tFinder.services',
   'tFinder.directives',
@@ -20,6 +21,5 @@ config(['$routeProvider', function($routeProvider) {
         $rootScope.title = current.$$route.title;
     });
 }]);
-
 
 

@@ -13,5 +13,8 @@
     "jquery": "~2.1.x",
     "angular-local-storage": "*",
     "angular-resource": "*"
+  },
+  "resolutions": {
+    "angular": "1.2.16"
   }
 }

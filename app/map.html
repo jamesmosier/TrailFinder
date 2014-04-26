@@ -1,28 +1,14 @@
+<div ng-controller="MapCtrl">
+	<div id="map" class="google-map-canvas" tfinder-map="{queryLimit: 3}"></div>
 
-<!-- 	<header class="bar bar-nav">
-		 <button class="btn btn-link btn-nav pull-left">
-		    <span class="icon icon-left-nav"></span>
-		    Back
-		 </button>
-		 <a class="icon fa location-arrow pull-right"></a>
-		 <h1 class="title">Trailfinder</h1>
-	</header>	 -->
+	<ul class="table-view" id="location-data">
+	</ul>
 
 
 
-<div id="map" class="google-map-canvas" tfinder-map="{queryLimit: 3}"></div>
+	<button type="button" class="btn btn-block more-results">
+		more results
+	</button>
+</div>
 
-<ul class="table-view" id="location-data">
-</ul>
-
-
-
-<button type="button" class="btn btn-block more-results">
-	more results
-</button>
-
-
-
-
-
-
+<!--ui-jq="tfindermap" ui-options="{queryLimit: 3}"-->
