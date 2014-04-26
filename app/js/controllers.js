@@ -11,6 +11,8 @@ angular.module('tFinder.controllers', [])
   	//ngStorage
   	//https://github.com/gsklee/ngStorage
   }])
-  .controller('MapCtrl', [function($scope, $route, $window, reloadRoute) {
-
+  .controller('MapCtrl', ['$scope', function($scope) {
+  	
   }]);
+
+  //angular.module('myApp.controllers').controller('MyCtrl1', ['$scope', function($scope) {
