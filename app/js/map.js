@@ -1,23 +1,24 @@
 (function($){
     $.fn.tfindermap = function (options) {
-        
-         var settings = $.extend({            
-            queryLimit: 3
-        }, options );
 
-        var trailfinder_map;        
+       var settings = $.extend({            
+        queryLimit: 3,
+        removeData: false
+    }, options );
 
-        function trailfinder_initialize() {
-            var mapOptions = {
-                zoom: 9,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            }
-            trailfinder_map = new google.maps.Map(document.getElementById('map'), mapOptions);
+       var trailfinder_map;        
+
+       function trailfinder_initialize() {
+        var mapOptions = {
+            zoom: 9,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        trailfinder_map = new google.maps.Map(document.getElementById('map'), mapOptions);
             // Try HTML5 geolocation
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function (position) {
                     var lat = position.coords.latitude,
-                        lng = position.coords.longitude,
+                    lng = position.coords.longitude,
                         //lat=41.081445,lng= -81.519005,
                         pos = new google.maps.LatLng(lat, lng),
                         //query from FusionTables for the map
@@ -37,13 +38,13 @@
                             clickable: true,
                             icon: 'http://labs.google.com/ridefinder/images/mm_20_green.png'
                         });
-                    geolocMarker.info = new google.maps.InfoWindow({
-                        content: '<span style="font-weight: bold;" class="users-location-marker">Your location</span>'
-                    });
-                    google.maps.event.addListener(geolocMarker, 'click', function () {
-                        geolocMarker.info.open(map, geolocMarker);
-                    });
-                    trailfinder_map.setCenter(pos);
+                        geolocMarker.info = new google.maps.InfoWindow({
+                            content: '<span style="font-weight: bold;" class="users-location-marker">Your location</span>'
+                        });
+                        google.maps.event.addListener(geolocMarker, 'click', function () {
+                            geolocMarker.info.open(map, geolocMarker);
+                        });
+                        trailfinder_map.setCenter(pos);
                     //query for the table                                    
                     var listQuery = "SELECT Name, Coordinates FROM "
                     + '1MsmdOvWLKNNrtKnmoEf2djCc3Rp_gYmueN4FGnc'
@@ -54,6 +55,11 @@
                     url.push('?sql=' + encodedQuery);
                     url.push('&key=AIzaSyAJ_2Gtxlr4jeFuBup_jyRa5taZGk20JLs');
                     url.push('&callback=?');
+
+                    if (settings.removeData) {
+                        $("#location-data").empty();
+                    }
+
                     // Send the JSONP request using jQuery
                     $.ajax({
                         url: url.join(''),
@@ -76,8 +82,8 @@
                                 var nospaceCoords = locationCoordinates.replace(/ /g,'');
                                 coordinatesElement.innerHTML = locationCoordinates;
                                 $(dataElement).append("<div class='directions-link'><a class='btn btn-primary' href='http://maps.google.com/maps?saddr="
-                                + lat + ',' + lng + "&daddr=" + nospaceCoords + "' target='_blank'><span class='fa icon-in-btn map-marker'></span>get directions</a></div>");
-                        
+                                    + lat + ',' + lng + "&daddr=" + nospaceCoords + "' target='_blank'><span class='fa icon-in-btn map-marker'></span>get directions</a></div>");
+
                                 coordinatesElement.className = 'coordinates';                
                                 dataElement.appendChild(nameElement);
                                 dataElement.appendChild(coordinatesElement);
@@ -86,58 +92,58 @@
                             distanceMatrixCoords(locCoordinates);
                         }//end success
                     });
-                    function distanceMatrixCoords(coords) {
-                        var origins = pos;
-                        var destinations = coords;
-                        var service = new google.maps.DistanceMatrixService();
+function distanceMatrixCoords(coords) {
+    var origins = pos;
+    var destinations = coords;
+    var service = new google.maps.DistanceMatrixService();
 
-                        service.getDistanceMatrix(
-                            {
-                                origins: [origins],
-                                destinations: destinations,
-                                travelMode: google.maps.TravelMode.DRIVING,
-                                unitSystem: google.maps.UnitSystem.IMPERIAL,
-                                avoidHighways: false,
-                                avoidTolls: false
-                            },
-                            callback
-                        );
+    service.getDistanceMatrix(
+    {
+        origins: [origins],
+        destinations: destinations,
+        travelMode: google.maps.TravelMode.DRIVING,
+        unitSystem: google.maps.UnitSystem.IMPERIAL,
+        avoidHighways: false,
+        avoidTolls: false
+    },
+    callback
+    );
 
-                        function callback(response, status) {
-                            if (status == google.maps.DistanceMatrixStatus.OK) {
-                                var origins = response.originAddresses;
-                                var destinations = response.destinationAddresses;
-                                var distanceElement = [];
-                                var theRow = null;
+    function callback(response, status) {
+        if (status == google.maps.DistanceMatrixStatus.OK) {
+            var origins = response.originAddresses;
+            var destinations = response.destinationAddresses;
+            var distanceElement = [];
+            var theRow = null;
 
-                                for (var i = 0; i < origins.length; i++) {
-                                    var results = response.rows[i].elements;
+            for (var i = 0; i < origins.length; i++) {
+                var results = response.rows[i].elements;
 
-                                    for (var j = 0; j < results.length; j++) {
-                                        var element = results[j];
-                                        var distance = element.distance.text;
-                                        var duration = element.duration.text;
-                                        var from = origins[i];
-                                        var to = destinations[j];
+                for (var j = 0; j < results.length; j++) {
+                    var element = results[j];
+                    var distance = element.distance.text;
+                    var duration = element.duration.text;
+                    var from = origins[i];
+                    var to = destinations[j];
 
-                                        distanceElement[j] = document.createElement('p');
-                                        distanceElement[j].innerHTML = results[j].distance.text + " - " + results[j].duration.text + " away";
-                                        distanceElement[j].className = 'distance-cell';
-                                        
-                                        theRow = document.getElementsByClassName("row-" + i++);                            
-                                        $(theRow).append(distanceElement[j]);
+                    distanceElement[j] = document.createElement('p');
+                    distanceElement[j].innerHTML = results[j].distance.text + " - " + results[j].duration.text + " away";
+                    distanceElement[j].className = 'distance-cell';
 
-                                    }
-                                }
-                            }
-                        }
+                    theRow = document.getElementsByClassName("row-" + i++);                            
+                    $(theRow).append(distanceElement[j]);
 
-                    }
+                }
+            }
+        }
+    }
 
-                }, function () {
-                    handleNoGeolocation(true);
-                });
-            } else {
+}
+
+}, function () {
+    handleNoGeolocation(true);
+});
+} else {
                 // Browser doesn't support Geolocation
                 handleNoGeolocation(false);
             }

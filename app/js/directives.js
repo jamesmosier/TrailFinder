@@ -16,7 +16,10 @@ directive('tfinderMap', function($timeout) {
       })
 
      scope.moreResults = function(){
-          $(element).tfindermap(scope.$eval(attrs.tfinderMap));
+          $(element).tfindermap({
+            queryLimit: 50,
+            removeData: true
+          });
      };
 
 
