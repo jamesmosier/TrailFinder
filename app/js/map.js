@@ -78,15 +78,25 @@
                                 nameElement.innerHTML = locationName;
                                 nameElement.className = 'name-name';
                                 var coordinatesElement = document.createElement('p');
-
+                                coordinatesElement.className = 'coordinates';   
                                 var nospaceCoords = locationCoordinates.replace(/ /g,'');
                                 coordinatesElement.innerHTML = locationCoordinates;
                                 $(dataElement).append("<div class='directions-link'><a class='btn btn-primary' href='http://maps.google.com/maps?saddr="
                                     + lat + ',' + lng + "&daddr=" + nospaceCoords + "' target='_blank'><span class='fa icon-in-btn map-marker'></span>get directions</a></div>");
 
-                                coordinatesElement.className = 'coordinates';                
+                                
+                                //directions & favs & coords
+                                var trailInfo = document.createElement('div');
+                                trailInfo.className = 'trail-info';
+                                $(trailInfo).css('display', 'none');
+
+                                var addFav = "<div class='add-fav'><span class='icon icon-star'></span><span class='icon icon-star-filled star-filled'></span><span class='add-fav-text'>add favorite</span></div>";
+                                var viewMap = "<a href='#'>Click to view a trail map</a>";
+                                $(trailInfo).append(coordinatesElement, addFav, viewMap);
+
+                                dataElement.appendChild(trailInfo);
                                 dataElement.appendChild(nameElement);
-                                dataElement.appendChild(coordinatesElement);
+                                //dataElement.appendChild(coordinatesElement);
                                 resultsTableData.appendChild(dataElement);
                             }
                             distanceMatrixCoords(locCoordinates);

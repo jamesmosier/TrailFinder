@@ -4,7 +4,6 @@
 // Declare app level module which depends on filters, and services
 angular.module('tFinder', [
   'ngRoute',
-  'ui.jq',
   //'tFinder.filters',
   //'tFinder.services',
   'tFinder.directives',

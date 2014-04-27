@@ -68,7 +68,7 @@ header, header.bar {
 #map {
 	margin: 0;
 	/*height: 55%;*/
-	height: 300px;
+	height: 200px;
 	width: 100%;
 }
 
@@ -106,10 +106,6 @@ header, header.bar {
 		background-color: #2C3849;
 	}
 
-.coordinates {
-	font-size: 10px;
-}
-
 .directions-link {
 	position: absolute;
 	right: 5px;
@@ -122,7 +118,7 @@ header, header.bar {
 }
 
 	#location-data > .table-view-cell {
-		padding: 6px 65px 6px 15px;
+		padding: 6px 15px;
 	}
 
 .name-name {
@@ -159,9 +155,25 @@ header, header.bar {
 
 .add-fav {
 	cursor: pointer;
+	color: #999;
+	float: left;
 }
 
+	.add-fav .icon {
+		float: left;
+	}
+
+.add-fav-text {
+	font-size: 13px;
+	padding-left: 4px;
+}
+
+	.add-fav-text:hover {
+		color: gold;
+	}
+
 .star-filled { 
+	color: gold;
 	display: none;
 }
 
@@ -173,6 +185,13 @@ header, header.bar {
 	display : none;
 }
 
+.trail-info a {
+	font-size: 12px;
+	float: left;
+}
 
-
+.coordinates {
+	font-size: 10px;
+	float: left;
+}
 
