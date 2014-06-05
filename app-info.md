@@ -1,13 +1,10 @@
-##To Start reload##
-cd to app folder
-type: reload -b
+##To Start sever##
+cd into Trailfinder
+type: grunt
 
-If you want to specify port (runs on localhost:8080 otherwise): 
-reload -p 8889
-
-source: https://www.npmjs.org/package/reload
+It will run on localhost:8080
 
 
 
 ##To Terminate##
-CTRL-C 
+CTRL+C 

@@ -54,17 +54,15 @@ THere is also a folder named "Trailfinder" which contains the Phonegap code/fram
 
 Running localhost
 -----------------
-**To Start reload**
-`cd` to app folder
-type: `reload -b`
+**Trailfinder** now uses Grunt to run tasks (and server). 
+  1. Fire up your terminal or command prompt! And change directory to Trailfinder folder, for example: `cd Sites/Trailfinder`
+  2. Install necessary **Grunt/Node** packages via `npm install` from within the root folder (not inside app)
+  3. `cd` to the *app* folder, then install the **Bower** packages via `bower install`. 
+  4. Once all packages are installed, you ready to run the project/server.
+  5. You can run the server via the simple command: `grunt` which will compile all *sass* and also offers live reload if files change.
+  6. Once you are done, you can terminate the server by pressing CTRL+C
 
-If you want to specify port (*runs on localhost:8080 otherwise*): 
-`reload -p 8889`
-
-source: [npm reload](https://www.npmjs.org/package/reload)
-
-**To Terminate**
-CTRL-C 
+*Please let me know if you have issues running!*
 
 Google Fusion Table setup
 -------------------------
