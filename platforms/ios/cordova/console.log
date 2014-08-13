@@ -1,0 +1,170 @@
+objc[31001]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-08-13 08:29:22.678 HelloCordova[31001:70b] Cannot find executable for CFBundle 0xa930cf0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-08-13 08:29:22.685 HelloCordova[31001:70b] Cannot find executable for CFBundle 0xa951a70 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-08-13 08:29:22.742 HelloCordova[31001:70b] Multi-tasking -> Device: YES, App: YES
+2014-08-13 08:29:22.762 HelloCordova[31001:70b] Unlimited access to network resources
+2014-08-13 08:29:22.765 HelloCordova[31001:70b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-08-13 08:29:23.107 HelloCordova[31001:70b] Resetting plugins due to page load.
+2014-08-13 08:29:23.348 HelloCordova[31001:70b] Finished load of: file:///Users/james.mosier/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/97DD2C4D-BBC3-4972-AE92-620D204DFBC3/HelloCordova.app/www/index.html
+objc[5682]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-08-13 11:46:49.891 HelloCordova[5682:70b] Cannot find executable for CFBundle 0xa283f90 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-08-13 11:46:49.897 HelloCordova[5682:70b] Cannot find executable for CFBundle 0xa2a1600 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-08-13 11:46:49.943 HelloCordova[5682:70b] Multi-tasking -> Device: YES, App: YES
+2014-08-13 11:46:49.963 HelloCordova[5682:70b] Unlimited access to network resources
+2014-08-13 11:46:49.966 HelloCordova[5682:70b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-08-13 11:46:50.249 HelloCordova[5682:70b] Resetting plugins due to page load.
+2014-08-13 11:46:50.470 HelloCordova[5682:70b] Finished load of: file:///Users/james.mosier/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/97DD2C4D-BBC3-4972-AE92-620D204DFBC3/HelloCordova.app/www/index.html
+objc[8277]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-08-13 11:53:33.739 HelloCordova[8277:70b] Cannot find executable for CFBundle 0xa571840 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-08-13 11:53:33.743 HelloCordova[8277:70b] Cannot find executable for CFBundle 0xb84f560 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-08-13 11:53:33.769 HelloCordova[8277:70b] Multi-tasking -> Device: YES, App: YES
+2014-08-13 11:53:33.774 HelloCordova[8277:70b] Unlimited access to network resources
+2014-08-13 11:53:33.776 HelloCordova[8277:70b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-08-13 11:53:33.857 HelloCordova[8277:70b] Resetting plugins due to page load.
+2014-08-13 11:53:34.009 HelloCordova[8277:70b] Finished load of: file:///Users/james.mosier/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/97DD2C4D-BBC3-4972-AE92-620D204DFBC3/HelloCordova.app/www/index.html
+Terminating in response to SpringBoard's termination.
+objc[8594]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-08-13 11:54:02.786 HelloCordova[8594:70b] Cannot find executable for CFBundle 0xa75bce0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-08-13 11:54:02.794 HelloCordova[8594:70b] Cannot find executable for CFBundle 0xa680b20 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-08-13 11:54:02.836 HelloCordova[8594:70b] Multi-tasking -> Device: YES, App: YES
+2014-08-13 11:54:02.844 HelloCordova[8594:70b] Unlimited access to network resources
+2014-08-13 11:54:02.853 HelloCordova[8594:70b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-08-13 11:54:02.994 HelloCordova[8594:70b] Resetting plugins due to page load.
+2014-08-13 11:54:03.187 HelloCordova[8594:70b] Finished load of: file:///Users/james.mosier/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/97DD2C4D-BBC3-4972-AE92-620D204DFBC3/HelloCordova.app/www/index.html
+objc[9080]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-08-13 11:55:04.114 HelloCordova[9080:70b] Cannot find executable for CFBundle 0xa6610f0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-08-13 11:55:04.118 HelloCordova[9080:70b] Cannot find executable for CFBundle 0xa565ed0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-08-13 11:55:04.142 HelloCordova[9080:70b] Multi-tasking -> Device: YES, App: YES
+2014-08-13 11:55:04.148 HelloCordova[9080:70b] Unlimited access to network resources
+2014-08-13 11:55:04.150 HelloCordova[9080:70b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-08-13 11:55:04.228 HelloCordova[9080:70b] Resetting plugins due to page load.
+2014-08-13 11:55:04.367 HelloCordova[9080:70b] Finished load of: file:///Users/james.mosier/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/97DD2C4D-BBC3-4972-AE92-620D204DFBC3/HelloCordova.app/www/index.html
+objc[9434]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-08-13 11:55:38.324 HelloCordova[9434:70b] Cannot find executable for CFBundle 0xa981920 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-08-13 11:55:38.332 HelloCordova[9434:70b] Cannot find executable for CFBundle 0xa293b50 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-08-13 11:55:38.364 HelloCordova[9434:70b] Multi-tasking -> Device: YES, App: YES
+2014-08-13 11:55:38.372 HelloCordova[9434:70b] Unlimited access to network resources
+2014-08-13 11:55:38.374 HelloCordova[9434:70b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-08-13 11:55:38.510 HelloCordova[9434:70b] Resetting plugins due to page load.
+2014-08-13 11:55:38.734 HelloCordova[9434:70b] Finished load of: file:///Users/james.mosier/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/97DD2C4D-BBC3-4972-AE92-620D204DFBC3/HelloCordova.app/www/index.html
+objc[9848]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-08-13 11:56:24.093 HelloCordova[9848:70b] Cannot find executable for CFBundle 0xa733df0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-08-13 11:56:24.101 HelloCordova[9848:70b] Cannot find executable for CFBundle 0xa744130 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-08-13 11:56:24.146 HelloCordova[9848:70b] Multi-tasking -> Device: YES, App: YES
+2014-08-13 11:56:24.155 HelloCordova[9848:70b] Unlimited access to network resources
+2014-08-13 11:56:24.158 HelloCordova[9848:70b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-08-13 11:56:24.314 HelloCordova[9848:70b] Resetting plugins due to page load.
+2014-08-13 11:56:24.546 HelloCordova[9848:70b] Finished load of: file:///Users/james.mosier/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/97DD2C4D-BBC3-4972-AE92-620D204DFBC3/HelloCordova.app/www/index.html
+objc[10259]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-08-13 11:57:08.888 HelloCordova[10259:70b] Cannot find executable for CFBundle 0xa268330 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-08-13 11:57:08.895 HelloCordova[10259:70b] Cannot find executable for CFBundle 0xa962000 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-08-13 11:57:08.930 HelloCordova[10259:70b] Multi-tasking -> Device: YES, App: YES
+2014-08-13 11:57:08.937 HelloCordova[10259:70b] Unlimited access to network resources
+2014-08-13 11:57:08.940 HelloCordova[10259:70b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-08-13 11:57:09.085 HelloCordova[10259:70b] Resetting plugins due to page load.
+2014-08-13 11:57:09.280 HelloCordova[10259:70b] Finished load of: file:///Users/james.mosier/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/97DD2C4D-BBC3-4972-AE92-620D204DFBC3/HelloCordova.app/www/index.html
+objc[10757]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-08-13 11:58:07.402 HelloCordova[10757:70b] Cannot find executable for CFBundle 0xa887cb0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-08-13 11:58:07.408 HelloCordova[10757:70b] Cannot find executable for CFBundle 0xa799780 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-08-13 11:58:07.440 HelloCordova[10757:70b] Multi-tasking -> Device: YES, App: YES
+2014-08-13 11:58:07.448 HelloCordova[10757:70b] Unlimited access to network resources
+2014-08-13 11:58:07.468 HelloCordova[10757:70b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-08-13 11:58:07.597 HelloCordova[10757:70b] Resetting plugins due to page load.
+2014-08-13 11:58:07.872 HelloCordova[10757:70b] Finished load of: file:///Users/james.mosier/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/97DD2C4D-BBC3-4972-AE92-620D204DFBC3/HelloCordova.app/www/index.html
+objc[11097]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-08-13 11:58:39.828 HelloCordova[11097:70b] Cannot find executable for CFBundle 0xa7871c0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-08-13 11:58:39.834 HelloCordova[11097:70b] Cannot find executable for CFBundle 0xa694b00 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-08-13 11:58:39.868 HelloCordova[11097:70b] Multi-tasking -> Device: YES, App: YES
+2014-08-13 11:58:39.876 HelloCordova[11097:70b] Unlimited access to network resources
+2014-08-13 11:58:39.878 HelloCordova[11097:70b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-08-13 11:58:40.018 HelloCordova[11097:70b] Resetting plugins due to page load.
+2014-08-13 11:58:40.238 HelloCordova[11097:70b] Finished load of: file:///Users/james.mosier/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/97DD2C4D-BBC3-4972-AE92-620D204DFBC3/HelloCordova.app/www/index.html
+objc[11322]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-08-13 11:58:53.126 HelloCordova[11322:70b] Cannot find executable for CFBundle 0xa831c70 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-08-13 11:58:53.133 HelloCordova[11322:70b] Cannot find executable for CFBundle 0xa9469d0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-08-13 11:58:53.165 HelloCordova[11322:70b] Multi-tasking -> Device: YES, App: YES
+2014-08-13 11:58:53.174 HelloCordova[11322:70b] Unlimited access to network resources
+2014-08-13 11:58:53.176 HelloCordova[11322:70b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-08-13 11:58:53.308 HelloCordova[11322:70b] Resetting plugins due to page load.
+2014-08-13 11:58:53.525 HelloCordova[11322:70b] Finished load of: file:///Users/james.mosier/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/97DD2C4D-BBC3-4972-AE92-620D204DFBC3/HelloCordova.app/www/index.html
+objc[12288]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2014-08-13 12:01:06.446 HelloCordova[12288:70b] Cannot find executable for CFBundle 0xa8790c0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2014-08-13 12:01:06.452 HelloCordova[12288:70b] Cannot find executable for CFBundle 0xaac7500 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2014-08-13 12:01:06.519 HelloCordova[12288:70b] Multi-tasking -> Device: YES, App: YES
+2014-08-13 12:01:06.538 HelloCordova[12288:70b] Unlimited access to network resources
+2014-08-13 12:01:06.542 HelloCordova[12288:70b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-08-13 12:01:06.800 HelloCordova[12288:70b] Resetting plugins due to page load.
+2014-08-13 12:01:07.020 HelloCordova[12288:70b] Finished load of: file:///Users/james.mosier/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/97DD2C4D-BBC3-4972-AE92-620D204DFBC3/HelloCordova.app/www/index.html
+Terminating in response to SpringBoard's termination.

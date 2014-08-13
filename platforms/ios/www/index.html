@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <title>My App</title>  
+  
+  <link rel="stylesheet" href="lib/onsen/css/onsenui.css">  
+  <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css">  
+  <link rel="stylesheet" href="styles/app.css"/>
+
+  <script src="lib/onsen/js/angular/angular.js"></script>    
+  <script src="lib/onsen/js/onsenui.js"></script>    
+  
+  <script src="cordova.js"></script>  
+  <script src="js/app.js"></script>  
+  <script>
+  ons.bootstrap();
+    ons.ready(function() {
+
+    });
+    
+  </script>
+</head>
+
+<body>    
+
+  <ons-navigator>
+    <ons-page style="background-color: #f9f9f9">
+      <ons-toolbar>
+        <div class="center">Master Detail</div>
+      </ons-toolbar>
+
+      <ons-list ng-controller="MasterController">
+        <ons-list-item modifier="chevron" ng-repeat="item in items" ng-click="showDetail($index)">
+          <ons-row>
+            <ons-col width="38px"> 
+              <ons-icon icon="{{item.icon}}" fixed-width="true" style="color: #999"></ons-icon>
+            </ons-col>
+            <ons-col class="left">
+              {{item.title}}
+            </ons-col>
+          </ons-row>                          
+        </ons-list-item>
+      </ons-list>
+    </ons-page>
+  </ons-navigator>
+
+  <script type="text/ons-template" id="detail.html">
+    <ons-page ng-controller="DetailController" style="background-color: #f9f9f9;">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">Details</div>
+      </ons-toolbar>
+
+      <br>
+      <ons-list>
+        <ons-list-header>Item Information</ons-list-header>
+        <ons-list-item><strong>{{item.title}}</strong></ons-list-item>
+        <ons-list-item>
+          <ons-row>
+            <ons-col width="38px"><ons-icon icon="{{item.icon}}" fixed-width="true" style="color: #999"></ons-icon></ons-col>
+            <ons-col>{{item.description}}</ons-col>
+          </ons-row>
+      </ons-list>
+    </ons-page>
+  </script>
+
+  <ons-tabbar>
+    <ons-tabbar-item page="home.html" label="Home" icon="home" active="true"></ons-tabbar-item>
+    <ons-tabbar-item page="comments.html" label="Comments" icon="comment"></ons-tabbar-item>
+    <ons-tabbar-item page="tags.html" label="Tags" icon="tags"></ons-tabbar-item>
+    <ons-tabbar-item page="feed.html" label="Feed" icon="rss"></ons-tabbar-item>
+    <ons-tabbar-item page="settings.html" label="Settings" icon="gear"></ons-tabbar-item>
+  </ons-tabbar>
+
+<script type="text/ons-template" id="home.html">
+  <ons-toolbar>
+    <div class="center">Home</div>
+  </ons-toolbar>
+  
+  <p style="padding-top: 100px; color: #999; text-align: center">Page Contents</p>
+</script>
+<script type="text/ons-template" id="comments.html">
+  <ons-toolbar>
+    <div class="center">Comments</div>
+  </ons-toolbar>
+  
+  <p style="padding-top: 100px; color: #999; text-align: center">Page Contents</p>
+</script>
+<script type="text/ons-template" id="tags.html">
+  <ons-toolbar>
+    <div class="center">Tags</div>
+  </ons-toolbar>
+  
+  <p style="padding-top: 100px; color: #999; text-align: center">Page Contents</p>
+</script>
+<script type="text/ons-template" id="feed.html">
+  <ons-toolbar>
+    <div class="center">Feed</div>
+  </ons-toolbar>
+  
+  <p style="padding-top: 100px; color: #999; text-align: center">Page Contents</p>
+</script>
+<script type="text/ons-template" id="settings.html">
+  <ons-toolbar>
+    <div class="center">Settings</div>
+  </ons-toolbar>
+  
+  <p style="padding-top: 100px; color: #999; text-align: center">Page Contents</p>
+</script>
+
+
+</body>  
+</html>
