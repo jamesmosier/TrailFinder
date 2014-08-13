@@ -27,46 +27,9 @@
 
 <body>    
 
-  <ons-navigator>
-    <ons-page style="background-color: #f9f9f9">
-      <ons-toolbar>
-        <div class="center">Master Detail</div>
-      </ons-toolbar>
+  
 
-      <ons-list ng-controller="MasterController">
-        <ons-list-item modifier="chevron" ng-repeat="item in items" ng-click="showDetail($index)">
-          <ons-row>
-            <ons-col width="38px"> 
-              <ons-icon icon="{{item.icon}}" fixed-width="true" style="color: #999"></ons-icon>
-            </ons-col>
-            <ons-col class="left">
-              {{item.title}}
-            </ons-col>
-          </ons-row>                          
-        </ons-list-item>
-      </ons-list>
-    </ons-page>
-  </ons-navigator>
-
-  <script type="text/ons-template" id="detail.html">
-    <ons-page ng-controller="DetailController" style="background-color: #f9f9f9;">
-      <ons-toolbar>
-        <div class="left"><ons-back-button>Back</ons-back-button></div>
-        <div class="center">Details</div>
-      </ons-toolbar>
-
-      <br>
-      <ons-list>
-        <ons-list-header>Item Information</ons-list-header>
-        <ons-list-item><strong>{{item.title}}</strong></ons-list-item>
-        <ons-list-item>
-          <ons-row>
-            <ons-col width="38px"><ons-icon icon="{{item.icon}}" fixed-width="true" style="color: #999"></ons-icon></ons-col>
-            <ons-col>{{item.description}}</ons-col>
-          </ons-row>
-      </ons-list>
-    </ons-page>
-  </script>
+  
 
   <ons-tabbar>
     <ons-tabbar-item page="home.html" label="Home" icon="home" active="true"></ons-tabbar-item>
