@@ -4,13 +4,13 @@ require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
 //example taken from: http://thecrumb.com/2014/03/15/using-grunt-for-live-reload/
 grunt.initConfig({
-
+    
+    //https://github.com/gruntjs/grunt-contrib-connect
     connect: {
         server: {
           options: {
             port: 3000,
-            //base: '<%= build_dir %>',
-            base: 'www/',
+            base: '<%= build_dir %>',
             // Change this to '0.0.0.0' to access the server from outside.
             hostname: 'localhost',
             livereload: true,
@@ -19,12 +19,12 @@ grunt.initConfig({
         }
     },
     
-
     //https://github.com/gruntjs/grunt-contrib-sass
     sass: {
         dist: {
             files: {
-                'www/styles/app.css': 'www/sass/app.scss'
+                'assets/css/app.css': 'sass/app.scss',
+                'assets/css/lemonade.css': 'sass/lemonade/lemonade.scss'
             }
         }
     },
@@ -33,7 +33,7 @@ grunt.initConfig({
     cssmin: {
       combine: {
         files: {
-          'www/styles/app.min.css': ['www/styles/app.css']
+          'assets/css/app.min.css': ['assets/css/lemonade.css', 'assets/css/app.css']
         }
       }
     },
@@ -42,11 +42,12 @@ grunt.initConfig({
     uglify: {
         scriptz: {
           files: {
-            'www/js/app.min.js': 'www/js/app.js'
+            'assets/js/main.js': 'js/main.js'
           }
         }
     },
-
+    
+    // https://github.com/gruntjs/grunt-contrib-watch
     watch: {
         all: {
                 files: ['*.html', 'sass/*.scss', 'docs/*'],
@@ -60,7 +61,7 @@ grunt.initConfig({
     });
 
     grunt.registerTask('build', ['sass', 'cssmin', 'uglify']);
-    grunt.registerTask('default', ['build', 'connect', 'watch']);
+    grunt.registerTask('default', ['build', 'connect']);
 
 };
     
