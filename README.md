@@ -1,3 +1,7 @@
+https://github.com/airbnb/react-native-maps/issues/937
+
+
+
 Documentation
 --------------
 
